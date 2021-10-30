@@ -1,0 +1,10 @@
+@import 'src/sass/variables.scss';
+
+.title {
+  font-size: 54px;
+  line-height: 63px;
+  color: $black--text;
+  height: 55vh;
+  text-align: center;
+  margin: 105px auto 0;
+}

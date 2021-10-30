@@ -1,0 +1,44 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.list {
+  @include list-style-none;
+  flex-grow: 1;
+}
+
+.upper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list__item {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.list__item_footer {
+  font-weight: bold;
+
+  &:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+
+  &:first-child {
+    margin-top: 6px;
+  }
+}
+
+.link {
+  padding: 12.5px 0;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+.active {
+  color: $han-purple;
+}
+

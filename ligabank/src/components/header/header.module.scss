@@ -1,0 +1,34 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.header {
+  display: flex;
+  min-height: 91px;
+  align-items: center;
+  background-color: $grey--background;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  @include container;
+}
+
+.login {
+  display: flex;
+  padding: 12.5px;
+  padding-right: 0;
+  min-width: 203px;
+  align-items: center;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+.loginImg {
+  margin-right: 14px;
+}

@@ -1,0 +1,89 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.footer {
+  min-height: 224px;
+  background-color: $grey--background;
+  padding: 49px;
+}
+
+.container {
+  @include container;
+  max-width: 1170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list {
+  @include list-style-none;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 45px;
+}
+
+.info {
+  max-width: 252px;
+  margin-right: 80px;
+}
+
+.adress,
+.text {
+  color: $grey--text;
+  font-size: 12px;
+  line-height: 17px;
+  font-style: normal;
+  margin: 3px 0 0;
+}
+
+.adress {
+  margin-top: 10px;
+}
+
+.tel {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 9px;
+  gap: 47px;
+}
+
+.call {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 175px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 10px;
+    height: 16px;
+    background-image: url('../../img/svg/smartphone-icon.svg');
+    background-color: transparent;
+  }
+}
+
+.mobile {
+  max-width: 175px;
+  margin-right: 57px;
+}
+
+.phone {
+  max-width: 155px;
+
+  &::before {
+    left: -33px;
+    width: 16px;
+    background-image: url('../../img/svg/phone-icon.svg');
+  }
+}

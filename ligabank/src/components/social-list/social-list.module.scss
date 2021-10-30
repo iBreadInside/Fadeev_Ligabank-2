@@ -1,0 +1,48 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.list {
+  @include list-style-none;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.link {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 16px;
+  height: 16px;
+
+  &:hover {
+    opacity: .6;
+  }
+}
+
+.facebook {
+  width: 9px;
+  background-image: url('../../img/svg/socials/facebook.svg');
+}
+
+.instagram {
+  background-image: url('../../img/svg/socials/instagram.svg');
+}
+
+.twitter {
+  background-image: url('../../img/svg/socials/twitter.svg');
+}
+
+.youtube {
+  background-image: url('../../img/svg/socials/youtube.svg');
+}
+
+.facebook,
+.instagram,
+.twitter,
+.youtube {
+  background-color: transparent;
+}
