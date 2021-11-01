@@ -8,7 +8,7 @@
 }
 
 .container {
-  @include container;
+  @include wrapper;
   max-width: 1170px;
   display: flex;
   justify-content: space-between;

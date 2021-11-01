@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './header.module.scss';
 import Logo from '../logo/logo';
-import { Link } from 'react-router-dom';
-import { AppRoute } from '../../const';
-import Nav from '../nav/nav';
+import Menu from '../nav/nav';
+import {Link} from 'react-router-dom';
+import {AppRoute} from '../../const';
 
 export default function Header() {
   return (
@@ -11,7 +11,7 @@ export default function Header() {
       <div className={styles.container}>
         <nav className={styles.nav}>
           <Logo/>
-          <Nav isFooter={false}/>
+          <Menu isFooter={false}/>
           <Link
             className={styles.login}
             to={AppRoute.LOGIN}>

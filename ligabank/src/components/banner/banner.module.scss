@@ -1,0 +1,88 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.banner {
+  background: $banner-gradient;
+  min-height: 400px;
+}
+
+.bannerWrapper {
+  @include container;
+  min-height: inherit;
+}
+
+.content {
+  position: relative;
+  width: 917px;
+  background-color: $han-purple;
+  min-height: inherit;
+  margin-left: 52px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 269px;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    background: $banner-gradient--block;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 270px;
+    height: 269px;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    background: $banner-gradient--block;
+  }
+}
+
+.textBlock {
+  padding: 110px 0 100px 118px;
+  color: $grey--background;
+  width: fit-content;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0;
+  font-size: 52px;
+  line-height: 47px;
+}
+
+.subtitle {
+  display: inline-block;
+  color: $lightgrey--default;
+  font-size: 22px;
+  line-height: 26px;
+  margin: 16px 0 34px;
+  max-width: 400px;
+}
+
+.creditLink {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 500;
+  display: block;
+  box-sizing: border-box;
+  width: fit-content;
+  padding: 14px 40px 18px;
+  background-color: $grey--background;
+  border-radius: 4px;
+  max-width: 400px;
+
+  &:hover {
+    box-shadow: 0 0 10px 5px $lightgrey--default;
+  }
+}
+
+.imageBlock {
+  position: absolute;
+  top: 61px;
+  right: -75px;
+  z-index: 1;
+}

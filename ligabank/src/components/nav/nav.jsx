@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './menu.module.scss';
+import styles from './nav.module.scss';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
-import { AppRoute } from '../../const';
+import {NavLink} from 'react-router-dom';
+import {AppRoute} from '../../const';
 
 const NavLinks = [
   {
@@ -27,11 +27,13 @@ const NavLinks = [
   },
 ];
 
-export default function Nav({isFooter = false}) {
+export default function Menu({isFooter = false}) {
+  const navList = isFooter ? NavLinks : NavLinks.slice(0, -1);
+
   return (
     <ul className={`${styles.list} ${isFooter ? '' : styles.upper}`}>
       {
-        NavLinks.map(({text, route}) => (
+        navList.map(({text, route}) => (
           <li key={text} className={`${styles.list__item} ${isFooter ? styles.list__item_footer : ''}`}>
             <NavLink
               exact
@@ -48,6 +50,6 @@ export default function Nav({isFooter = false}) {
   );
 }
 
-Nav.propTypes = {
+Menu.propTypes = {
   isFooter: PropTypes.bool.isRequired,
 };

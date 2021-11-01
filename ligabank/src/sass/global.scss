@@ -6,12 +6,21 @@
   box-sizing: border-box;
 }
 
-.page {
+.body {
   font-family: $font-default;
+  font-size: $font-size--default;
+  line-height: $line-height--default;
   margin: 0;
   padding: 0;
-  font-size: 16px;
-  line-height: 19px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  height:100%;
+  min-width: $mobile-width;
 }
 
 .visually-hidden {

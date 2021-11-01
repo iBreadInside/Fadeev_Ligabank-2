@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './footer.module.scss';
 import Logo from '../logo/logo';
+import Menu from '../nav/nav';
 import SocialList from '../social-list/social-list';
-import Nav from '../nav/nav';
 
 export default function Footer() {
   return (
@@ -17,7 +17,7 @@ export default function Footer() {
           </address>
         </section>
 
-        <Nav isFooter />
+        <Menu isFooter />
 
         <section className={styles.contacts}>
           <div className={`${styles.call} ${styles.mobile}`}>
