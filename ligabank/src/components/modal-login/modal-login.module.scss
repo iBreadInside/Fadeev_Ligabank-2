@@ -1,0 +1,40 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 45px;
+}
+
+.closeBtn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  background: url('../../img/svg/close-cross.svg') 100% 100% no-repeat;
+}
+
+.form {
+  width: 100%;
+}
+
+.list {
+  @include list-style-none;
+  // width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+}
+
+.label {
+  font-size: 16px;
+  line-height: 22px;
+  color: $grey--modal
+}

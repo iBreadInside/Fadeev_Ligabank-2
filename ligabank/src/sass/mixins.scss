@@ -9,6 +9,11 @@
   padding: 0;
 }
 
+@mixin link {
+  color: $black--default;
+  text-decoration: none;
+}
+
 @mixin button {
   font-family: $font-default;
   border-radius: 4px;
