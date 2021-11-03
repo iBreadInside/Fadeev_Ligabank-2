@@ -3,12 +3,16 @@
 
 .link {
   @include link;
+  @include interactive;
+  display: flex;
+  align-items: center;
   width: 149px;
+  // margin: 15px 58px 7px;
   margin-right: 58px;
-  margin-bottom: 7px;
+  // margin-bottom: 7px;
   font-weight: bold;
-  font-size: 20px;
-  line-height: 23px;
+  // font-size: 20px;
+  // line-height: 23px;
 }
 
 .link__modal {
@@ -17,7 +21,10 @@
 }
 
 .logo {
-  margin-right: 10px;
+  margin-right: 3px;
+
+  // margin-right: 10px;
+  transform: scale(0.66);
 }
 
 .textBlock {

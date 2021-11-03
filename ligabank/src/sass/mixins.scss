@@ -1,6 +1,14 @@
 @mixin wrapper {
-  width: $desktop-wrapper-width;
+  width: $mobile-wrapper-width--relative;
   margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: $tablet-wrapper-width--relative;
+  }
+
+  @media (min-width: $desktop-wrapper-width) {
+    width: $desktop-wrapper-width--relative;
+  }
 }
 
 @mixin list-style-none {

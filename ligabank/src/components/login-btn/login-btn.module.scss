@@ -1,0 +1,19 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.login {
+  @include interactive;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $grey--line;
+  padding: 0;
+  width: 100%;
+  min-height: 60px;
+}
+
+.login__img {
+  margin: 0 15px;
+}
