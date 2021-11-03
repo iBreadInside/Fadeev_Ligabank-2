@@ -19,9 +19,17 @@
   border-radius: 4px;
   cursor: pointer;
   text-align: center;
+  color: $grey--background;
+  background-color: $han-purple;
+}
 
+@mixin interactive {
   &:hover {
     opacity: .6;
+  }
+
+  &:focus {
+    outline: 2px solid black;
   }
 
   &:disabled {

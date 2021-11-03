@@ -9,6 +9,7 @@
 }
 
 .closeBtn {
+  @include interactive;
   position: relative;
   width: 20px;
   height: 20px;
@@ -23,18 +24,54 @@
 
 .list {
   @include list-style-none;
-  // width: 100%;
 }
 
 .item {
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 
+  &:nth-child(2) {
+    margin-bottom: 50px;
+  }
 }
 
 .label {
   font-size: 16px;
   line-height: 22px;
   color: $grey--modal
+}
+
+.input {
+  @include interactive;
+  border: 1px solid $black--default;
+  border-radius: 4px;
+  background-color: transparent;
+  height: 60px;
+  padding: 10px;
+}
+
+.forgotBtn {
+  @include interactive;
+  position: absolute;
+  right: 0;
+  top: 90px;
+  font-size: 12px;
+  line-height: 17px;
+  color: $grey--text;
+  text-decoration: none;
+
+  &:hover {
+    color: $black--default;
+  }
+}
+
+.loginBtn {
+  @include button;
+  @include interactive;
+  width: 100%;
+  padding: 18px 0;
+  font-size: 18px;
+  line-height: 21px;
 }

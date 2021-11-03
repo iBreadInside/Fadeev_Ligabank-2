@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { BtnType, InputType } from '../../const';
 import Logo from '../logo/logo';
 import styles from './modal-login.module.scss';
 
-export default function ModalLogin() {
+export default function ModalLogin({onClose}) {
   return(
     <>
       <div className={styles.header}>
@@ -12,6 +13,7 @@ export default function ModalLogin() {
         <button
           type={BtnType.BTN}
           className={styles.closeBtn}
+          onClick={onClose}
           aria-label='Закрыть окно' />
       </div>
 
@@ -22,17 +24,18 @@ export default function ModalLogin() {
             <input
               className={styles.input}
               type={InputType.TEXT}
+              autoFocus
               name='login-input'
               id='login' />
           </li>
           <li className={styles.item}>
             <label className={styles.label} htmlFor='password'>Пароль</label>
             <input
-              // style={`${styles.input} ${styles.input__password}`}
+              className={styles.input}
               type={InputType.PASSWORD}
               name='login-input'
               id='password' />
-            <Link to='#'>Забыли пароль?</Link>
+            <Link className={styles.forgotBtn} to='#'>Забыли пароль?</Link>
           </li>
         </ul>
 
@@ -45,3 +48,7 @@ export default function ModalLogin() {
     </>
   );
 }
+
+ModalLogin.propTypes = {
+  onClose: PropTypes.func.isRequired,
+};

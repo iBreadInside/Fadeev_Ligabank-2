@@ -39,22 +39,13 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* <Modal
-        isOpen={isModalOpened}
-        onRequestClose={handleModalClose}
-        className={styles.modal__container}
-        overlayClassName={styles.modal}
-      >
-        <p>dadasdad</p>
-      </Modal> */}
-
       <Modal
         isOpen={isModalOpened}
         onRequestClose={handleModalClose}
         className={styles.modal__container}
         overlayClassName={styles.modal}
-        >
-        <ModalLogin />
+      >
+        <ModalLogin onClose={handleModalClose} />
       </Modal>
     </header>
   );

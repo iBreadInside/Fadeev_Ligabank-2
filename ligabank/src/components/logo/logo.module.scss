@@ -1,6 +1,8 @@
 @import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
 
 .link {
+  @include link;
   width: 149px;
   margin-right: 58px;
   margin-bottom: 7px;
@@ -9,6 +11,27 @@
   line-height: 23px;
 }
 
+.link__modal {
+  display: flex;
+  margin: 0;
+}
+
 .logo {
   margin-right: 10px;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 12px;
+  line-height: 2px;
+  margin: 0;
+  font-weight: normal;
 }
