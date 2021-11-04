@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import styles from './header.module.scss';
 import Logo from '../logo/logo';
 import Nav from '../nav/nav';
-import { BtnType } from '../../const';
+import { BtnType, LocStorKey } from '../../const';
 import ModalLogin from '../modal-login/modal-login';
 import LoginBtn from '../login-btn/login-btn';
 
@@ -19,6 +19,16 @@ export default function Header() {
   };
 
   const handleModalClose = () => {
+    setIsModalOpened(false);
+  };
+
+  const handleFormSubmit = (evt) => {
+    evt.preventDefault();
+
+    Object.values(LocStorKey).map((name) => (
+      localStorage.removeItem(name)
+    ));
+
     setIsModalOpened(false);
   };
 
@@ -63,7 +73,7 @@ export default function Header() {
         className={styles.modal__container}
         overlayClassName={styles.modal}
       >
-        <ModalLogin onClose={handleModalClose} />
+        <ModalLogin onClose={handleModalClose} onFormSubmit={handleFormSubmit} />
       </Modal>
     </header>
   );

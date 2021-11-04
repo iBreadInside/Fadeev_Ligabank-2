@@ -21,24 +21,31 @@
 }
 
 .logo {
-  margin-right: 3px;
-
+  margin-left: -4px;
+  margin-right: 7px;
   // margin-right: 10px;
   transform: scale(0.66);
+}
+
+.logo__modal {
+  transform: scale(1.1);
 }
 
 .textBlock {
   display: flex;
   flex-direction: column;
+  // justify-content: flex-start;
 }
 
 .title {
   margin: 0;
+  font-size: 20px;
+  line-height: 23px;
 }
 
 .subtitle {
   font-size: 12px;
-  line-height: 2px;
+  line-height: 10px;
   margin: 0;
   font-weight: normal;
 }

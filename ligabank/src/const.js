@@ -17,3 +17,8 @@ export const InputType = {
   TEXT: 'text',
   PASSWORD: 'password',
 };
+
+export const LocStorKey = {
+  LOGIN: 'login',
+  PASS: 'password',
+};
