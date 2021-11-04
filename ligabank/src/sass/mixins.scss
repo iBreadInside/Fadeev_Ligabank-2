@@ -1,6 +1,14 @@
 @mixin wrapper {
-  width: $desktop-wrapper-width;
+  width: $mobile-wrapper-width--relative;
   margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: $tablet-wrapper-width--relative;
+  }
+
+  @media (min-width: $desktop-wrapper-width) {
+    width: $desktop-wrapper-width--relative;
+  }
 }
 
 @mixin list-style-none {
@@ -9,14 +17,29 @@
   padding: 0;
 }
 
+@mixin link {
+  color: $black--default;
+  text-decoration: none;
+}
+
 @mixin button {
   font-family: $font-default;
   border-radius: 4px;
   cursor: pointer;
   text-align: center;
+  color: $grey--background;
+  background-color: $han-purple;
+}
+
+@mixin interactive {
+  cursor: pointer;
 
   &:hover {
     opacity: .6;
+  }
+
+  &:focus {
+    outline: 2px solid black;
   }
 
   &:disabled {

@@ -3,32 +3,169 @@
 
 .header {
   display: flex;
-  min-height: 91px;
   align-items: center;
+  min-height: 48px;
   background-color: $grey--background;
+  padding: 11px 0;
 }
 
-.nav {
-  display: flex;
-  align-items: center;
+.header__navShown {
+  position: fixed;
+  top:0;
+  height: 100vh;
+  width: 100vw;
+  align-items: flex-start;
 }
 
-.container {
+.wrapper {
   @include wrapper;
 }
 
-.login {
-  display: flex;
-  padding: 12.5px;
-  padding-right: 0;
-  min-width: 203px;
-  align-items: center;
+.morph {
+  @include interactive;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  background-size: contain;
+}
 
-  &:hover {
-    opacity: .5;
+.morph__login {
+  width: 14px;
+  height: 16px;
+  background-image: url('../../img/svg/login-icon.svg');
+  background-size: contain;
+}
+
+.morph__close {
+  width: 13px;
+  height: 13px;
+  background-image: url('../../img/svg/close-cross.svg');
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__toggler {
+  @include interactive;
+  width: 16px;
+  height: 10px;
+  border: none;
+  background-color: transparent;
+  margin-right: 11px;
+  background: linear-gradient(
+    to bottom,
+    $black--default 0px,
+    $black--default 1px,
+    transparent 1px,
+    transparent 5px,
+    $black--default 5px,
+    $black--default 6px,
+    transparent 6px,
+    transparent 9px,
+    $black--default 9px,
+    $black--default 10px
+  ) 100% 100% no-repeat;
+}
+
+.nav__control {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 41px;
+}
+
+.menu__hide {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  background-color: rgba($black--default, .6);
+}
+
+.modal__container {
+  display: flex;
+  flex-direction: column;
+  background-color: $grey--background;
+  width: $mobile-wrapper-width--relative;
+  margin: auto auto;
+  padding: 40px 15px;
+  border: 5px solid $han-purple;
+  min-height: 455px;
+}
+
+@media (min-width: $tablet-width) {
+  .header {
+    min-height: 69px;
+  }
+
+  .morph {
+    display: none;
+  }
+
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav__toggler {
+    display: none;
+  }
+
+  .nav__control {
+    padding-top: 10px;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  .modal__container {
+    width: $tablet-modal-width;
+    height: 493px;
+    padding: 53px 85px;
   }
 }
 
-.loginImg {
-  margin-right: 14px;
+@media (min-width: $desktop-width) {
+  .header {
+    min-height: 91px;
+  }
+
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .nav__control {
+    padding-top: 2px;
+  }
+
+  .menu {
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  .modal__container {
+    width: $desktop-modal-login-width;
+    padding: 46px 56px;
+  }
 }

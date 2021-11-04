@@ -1,14 +1,84 @@
 @import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
 
 .link {
-  width: 149px;
+  @include link;
+  @include interactive;
+  display: flex;
+  align-items: center;
   margin-right: 58px;
-  margin-bottom: 7px;
   font-weight: bold;
+}
+
+.link__modal {
+  display: flex;
+  margin: 0;
+}
+
+.logo {
+  margin-left: -4px;
+  margin-right: 4px;
+  transform: scale(0.66);
+}
+
+.link__modal .logo {
+  transform: scale(1.1);
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
   font-size: 20px;
   line-height: 23px;
 }
 
-.logo {
-  margin-right: 10px;
+.subtitle {
+  font-size: 12px;
+  line-height: 10px;
+  margin: 0;
+  font-weight: normal;
+}
+
+@media (min-width: $tablet-width) {
+  .link {
+    font-size: 18px;
+    line-height: 21px;
+    margin-right: 0;
+    min-width: 133px;
+  }
+
+  .logo {
+    transform: scale(0.8);
+    margin-bottom: 10px;
+    margin-right: 7px;
+  }
+
+  .link__modal .logo {
+    transform: scale(1.2);
+    padding-top: 5px;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .link {
+    font-size: 20px;
+    line-height: 23px;
+    margin-right: 116px;
+  }
+
+  .logo {
+    transform: scale(1);
+    margin-left: -1px;
+    margin-bottom: 15px;
+    margin-right: 9px;
+  }
+
+  .link__modal .logo {
+    transform: scale(1.3);
+  }
 }

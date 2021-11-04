@@ -1,0 +1,124 @@
+@import 'src/sass/mixins.scss';
+@import 'src/sass/variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.closeBtn {
+  @include interactive;
+  width: 20px;
+  height: 20px;
+  margin-right: -3px;
+  background-color: transparent;
+  border: none;
+  background: url('../../img/svg/close-cross.svg') 100% 100% no-repeat;
+}
+
+.form {
+  width: 100%;
+  margin-top: 29px;
+}
+
+.list {
+  @include list-style-none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  &:nth-child(2) {
+    position: relative;
+    margin-bottom: 30px;
+  }
+}
+
+.label {
+  font-size: 16px;
+  line-height: 22px;
+  color: $grey--modal;
+  margin-bottom: 4px;
+}
+
+.password_toggler {
+  @include interactive;
+  position: absolute;
+  width: 27px;
+  height: 17px;
+  right: 14px;
+  bottom: 22px;
+  border: none;
+  background-color: transparent;
+  background: url('../../img/svg/password-hide.svg') center no-repeat;
+  z-index: 2;
+}
+
+.input {
+  @include interactive;
+  border: 1px solid $black--default;
+  border-radius: 4px;
+  background-color: transparent;
+  height: 60px;
+  padding: 10px;
+}
+
+.forgotBtn {
+  @include interactive;
+  position: absolute;
+  right: 50%;
+  top: 178px;
+  transform: translate(50%, 0);
+  font-size: 14px;
+  line-height: 20px;
+  color: $grey--text;
+  text-decoration: none;
+
+  &:hover {
+    color: $black--default;
+  }
+}
+
+.loginBtn {
+  @include button;
+  @include interactive;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+@media (min-width: $tablet-width) {
+  .form {
+    margin-top: 34px;
+  }
+
+  .item {
+    margin-bottom: 25px;
+
+    &:nth-child(2) {
+      margin-bottom: 48px;
+    }
+  }
+
+  .password_toggler {
+    right: 19px;
+  }
+
+  .forgotBtn {
+    right: 0;
+    top: 93px;
+    font-size: 12px;
+    line-height: 17px;
+    transform: none;
+  }
+
+  .loginBtn {
+    font-size: 18px;
+    line-height: 21px;
+    padding: 18px 0;
+  }
+}
