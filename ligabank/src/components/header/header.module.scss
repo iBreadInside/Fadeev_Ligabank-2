@@ -1,7 +1,6 @@
 @import 'src/sass/mixins.scss';
 @import 'src/sass/variables.scss';
 
-// Mobile
 .header {
   display: flex;
   align-items: center;
@@ -57,7 +56,7 @@
   height: 10px;
   border: none;
   background-color: transparent;
-  margin-right: 8px;
+  margin-right: 11px;
   background: linear-gradient(
     to bottom,
     $black--default 0px,
@@ -81,7 +80,6 @@
 .menu {
   display: flex;
   flex-direction: column;
-  // align-items: flex-start;
   margin-top: 41px;
 }
 
@@ -107,47 +105,67 @@
   flex-direction: column;
   background-color: $grey--background;
   width: $mobile-wrapper-width--relative;
-  // align-items: center;
   margin: auto auto;
   padding: 40px 15px;
   border: 5px solid $han-purple;
-  height: 455px;
+  min-height: 455px;
 }
 
-// .header {
-//   display: flex;
-//   min-height: 91px;
-//   align-items: center;
-//   background-color: $grey--background;
-// }
+@media (min-width: $tablet-width) {
+  .header {
+    min-height: 69px;
+  }
 
-// .nav {
-//   display: flex;
-//   align-items: center;
-// }
+  .morph {
+    display: none;
+  }
 
-// .container {
-//   @include wrapper;
-// }
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-// .login {
-//   display: flex;
-//   padding: 12.5px;
-//   padding-right: 0;
-//   min-width: 203px;
-//   align-items: center;
-//   background-color: transparent;
-//   border: none;
+  .nav__toggler {
+    display: none;
+  }
 
-//   &:hover {
-//     opacity: .5;
-//   }
-// }
+  .nav__control {
+    padding-top: 10px;
+  }
 
+  .menu {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+  }
 
+  .modal__container {
+    width: $tablet-modal-width;
+    height: 493px;
+    padding: 53px 85px;
+  }
+}
 
-// .loginImg {
-//   // margin-right: 14px;
-// }
+@media (min-width: $desktop-width) {
+  .header {
+    min-height: 91px;
+  }
 
+  .nav {
+    justify-content: flex-start;
+  }
 
+  .nav__control {
+    padding-top: 2px;
+  }
+
+  .menu {
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  .modal__container {
+    width: $desktop-modal-login-width;
+    padding: 46px 56px;
+  }
+}

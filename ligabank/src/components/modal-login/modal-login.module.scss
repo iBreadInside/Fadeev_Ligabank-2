@@ -70,7 +70,6 @@
   @include interactive;
   position: absolute;
   right: 50%;
-  // top: 90px;
   top: 178px;
   transform: translate(50%, 0);
   font-size: 14px;
@@ -90,4 +89,36 @@
   padding: 15px 0;
   font-size: 14px;
   line-height: 16px;
+}
+
+@media (min-width: $tablet-width) {
+  .form {
+    margin-top: 34px;
+  }
+
+  .item {
+    margin-bottom: 25px;
+
+    &:nth-child(2) {
+      margin-bottom: 48px;
+    }
+  }
+
+  .password_toggler {
+    right: 19px;
+  }
+
+  .forgotBtn {
+    right: 0;
+    top: 93px;
+    font-size: 12px;
+    line-height: 17px;
+    transform: none;
+  }
+
+  .loginBtn {
+    font-size: 18px;
+    line-height: 21px;
+    padding: 18px 0;
+  }
 }

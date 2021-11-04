@@ -14,12 +14,8 @@ export default function Header() {
   const [isMobileNavHide, setIsMobileNavHide] = useState(true);
 
   // Modal handlers
-  const handleModalOpen = () => {
-    setIsModalOpened(true);
-  };
-
-  const handleModalClose = () => {
-    setIsModalOpened(false);
+  const handleModalToggle = () => {
+    isModalOpened ? setIsModalOpened(false) : setIsModalOpened(true);
   };
 
   const handleFormSubmit = (evt) => {
@@ -33,47 +29,42 @@ export default function Header() {
   };
 
   // Nav handlers
-  const handleOpenNav = () => {
-    setIsMobileNavHide(false);
-  };
-
-  const handleCloseNav = () => {
-    setIsMobileNavHide(true);
+  const handleNavToggle = () => {
+    isMobileNavHide ? setIsMobileNavHide(false) : setIsMobileNavHide(true);
   };
 
   return (
     <header className={`${styles.header} ${isMobileNavHide ? '' : styles.header__navShown}`}>
       <div className={styles.wrapper}>
-
         <nav className={styles.nav}>
           <div className={styles.nav__control}>
             <button
               type={BtnType.BTN}
               className={styles.nav__toggler}
-              onClick={isMobileNavHide ? handleOpenNav : handleCloseNav}
+              onClick={handleNavToggle}
             />
-            <Logo/>
+            <Logo />
             <button
               type={BtnType.BTN}
               className={`${styles.morph} ${isMobileNavHide ? styles.morph__login : styles.morph__close}`}
-              onClick={isMobileNavHide ? handleModalOpen : handleCloseNav}
+              onClick={isMobileNavHide ? handleModalToggle : handleNavToggle}
             />
           </div>
 
           <div className={`${styles.menu} ${isMobileNavHide ? styles.menu__hide : ''}`}>
             <Nav isFooter={false}/>
-            <LoginBtn withText onLoginCLick={handleModalOpen} />
+            <LoginBtn withText onLoginCLick={handleModalToggle} />
           </div>
         </nav>
       </div>
 
       <Modal
         isOpen={isModalOpened}
-        onRequestClose={handleModalClose}
+        onRequestClose={handleModalToggle}
         className={styles.modal__container}
         overlayClassName={styles.modal}
       >
-        <ModalLogin onClose={handleModalClose} onFormSubmit={handleFormSubmit} />
+        <ModalLogin onClose={handleModalToggle} onFormSubmit={handleFormSubmit} />
       </Modal>
     </header>
   );

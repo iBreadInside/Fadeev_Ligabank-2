@@ -15,5 +15,31 @@
 }
 
 .login__img {
-  margin: 0 15px;
+  margin: 0 13px;
+}
+
+
+@media (min-width: $tablet-width) {
+  .login {
+    border: none;
+    min-height: fit-content;
+    width: fit-content;
+    margin-right: -13px;
+    margin-left: 13px;
+  }
+
+  .text {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .login {
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+
+  .text {
+    display: inline;
+  }
 }

@@ -27,11 +27,11 @@ const NavLinks = [
   },
 ];
 
-export default function Menu({isFooter = false}) {
+export default function Nav({isFooter = false}) {
   const navList = isFooter ? NavLinks : NavLinks.slice(0, -1);
 
   return (
-    <ul className={`${styles.list} ${isFooter ? '' : styles.upper}`}>
+    <ul className={styles.list}>
       {
         navList.map(({text, route}) => (
           <li key={text} className={`${styles.list__item} ${isFooter ? styles.list__item_footer : ''}`}>
@@ -50,6 +50,6 @@ export default function Menu({isFooter = false}) {
   );
 }
 
-Menu.propTypes = {
+Nav.propTypes = {
   isFooter: PropTypes.bool.isRequired,
 };

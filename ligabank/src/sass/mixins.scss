@@ -32,6 +32,8 @@
 }
 
 @mixin interactive {
+  cursor: pointer;
+
   &:hover {
     opacity: .6;
   }
