@@ -1,0 +1,56 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+.swiper {
+  width: 100%;
+  height: 226px;
+}
+
+.swiper .pag:nth-child(n) {
+  margin: 0 2px;
+}
+
+.pag__active {
+  background: $grey--background;
+  opacity: 1;
+}
+
+.slide {
+  padding: 39px 15px;
+  background-position: 63% 76%;
+  background-size: $tablet-width;
+  background-repeat: no-repeat;
+
+  &:nth-child(1) {
+    background: $first-slide-background;
+    background-image: url('../../img/slider/cards.png');
+    background-position: 43% 76%;
+    background-size: $mobile-width*3.2;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../img/slider/cards@2x.png');
+    }
+  }
+
+  &:nth-child(2) {
+    background-color: $second-slide-background;
+    background-image: url('../../img/slider/man.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../img/slider/man@2x.jpg');
+    }
+  }
+
+  &:nth-child(3) {
+    background-color: $third-slide-background;
+    background-image: url('../../img/slider/girl.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../img/slider/girl@2x.jpg');
+    }
+  }
+}
+
+.slide_white {
+  color: $grey--background;
+}

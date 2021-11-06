@@ -7,8 +7,8 @@ export default function CreditCalculatorPage() {
   return (
     <div className='page'>
       <Header/>
-      {/* <MainContent/>
-      <Footer/> */}
+      <MainContent/>
+      {/* <Footer/> */}
     </div>
   );
 }

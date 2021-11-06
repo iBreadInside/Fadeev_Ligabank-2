@@ -1,0 +1,37 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+.title {
+  margin: 0;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 38px;
+  line-height: 45px;
+}
+
+.subtitle {
+  margin: 0;
+  margin-bottom: 26px;
+}
+
+.subtitle_short {
+  max-width: 140px;
+}
+
+.button {
+  @include interactive;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 13px 30px;
+  border: none;
+  border-radius: 4px;
+  min-width: 188px;
+  color: $grey--background;
+  background-color: $han-purple;
+}
+
+.button__white {
+  color: $black--default;
+  background-color: $grey--background;
+}
