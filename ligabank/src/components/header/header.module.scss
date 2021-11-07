@@ -6,7 +6,7 @@
   align-items: center;
   min-height: 48px;
   background-color: $grey--background;
-  padding: 11px 0;
+  padding: 10px 0;
 }
 
 .header__navShown {
@@ -98,6 +98,7 @@
   height: 100%;
   align-items: center;
   background-color: rgba($black--default, .6);
+  z-index: 100;
 }
 
 .modal__container {

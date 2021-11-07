@@ -1,0 +1,99 @@
+@import '../../sass/variables.scss';
+// @import '../../sass/mixins.scss';
+
+.swiper {
+  width: 100%;
+  height: 226px;
+
+  & .pag:nth-child(n) {
+    margin: 0 2px;
+    background: $dark-blue;
+    opacity: 1;
+  }
+
+  & .pag__active:nth-child(n) {
+    background: $grey--background;
+  }
+
+  & .pag:nth-child(2) + .pag__active {
+    background: #E0E0E0;
+  }
+}
+
+.slide {
+  padding: 39px 4.7vw;
+  background-position: 63% 76%;
+  background-size: $tablet-width;
+
+  &:nth-child(1) {
+    background-color: $han-purple;
+    background-image: url('../../img/slider/cards.png');
+    background-position: 43% 76%;
+    background-size: $slider-background-size;
+    background-repeat: no-repeat;
+
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../img/slider/cards@2x.png');
+    }
+  }
+
+  &:nth-child(2) {
+    background-color: $second-slide-background;
+    background-image: url('../../img/slider/man.jpg');
+    background-repeat: no-repeat;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../img/slider/man@2x.jpg');
+    }
+  }
+
+  &:nth-child(3) {
+    background-color: $third-slide-background;
+    background-image: url('../../img/slider/girl.jpg');
+    background-repeat: no-repeat;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../img/slider/girl@2x.jpg');
+    }
+  }
+}
+
+.slide_white {
+  color: $grey--background;
+}
+
+@media (min-width: $tablet-width) {
+  .swiper {
+    min-height: 300px;
+  }
+
+  .swiper .pag:nth-child(n) {
+    margin: 0 4px;
+  }
+
+  .slide {
+    padding: 65px 11.2vw;
+    background-position: 62% 76%;
+    background-size: $slider-background-size;
+
+    &:nth-child(3) {
+      background-position: 50% 76%;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .swiper {
+    min-height: 400px;
+  }
+
+  .slide {
+    padding: 102px 19.6vw;
+    background-size: 100%;
+
+    &:nth-child(1) {
+      background-size: $desktop-ctrl-width;
+    }
+  }
+}
