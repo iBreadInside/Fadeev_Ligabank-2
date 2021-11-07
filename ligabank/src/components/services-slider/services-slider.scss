@@ -1,0 +1,17 @@
+@import '../../sass/variables.scss';
+
+.swiper-horizontal > .swiper-pagination-bullets {
+  bottom: 10px;
+}
+
+@media (min-width: $tablet-width) {
+  .swiper-horizontal > .swiper-pagination-bullets {
+    bottom: 11px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .swiper-horizontal > .swiper-pagination-bullets {
+    bottom: 36px;
+  }
+}

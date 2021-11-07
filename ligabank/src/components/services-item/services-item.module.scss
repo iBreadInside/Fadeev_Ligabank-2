@@ -1,0 +1,67 @@
+@import '../../sass/mixins.scss';
+
+.title {
+  font-weight: 500;
+  line-height: 22px;
+  margin: 0;
+  margin-bottom: 20px;
+  max-width: 260px;
+}
+
+.title__short {
+  max-width: 226px
+}
+
+.advantages {
+  @include list-style-none;
+  margin-left: 15px;
+  max-width: 227px;
+  margin-bottom: 24px;
+}
+
+.advantages__short {
+  max-width: 200px;
+}
+
+.item {
+  position: relative;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 12px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    background-image: url('../../img/svg/tabs/check.svg');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 8px;
+    left: -16px;
+    top: 4px;
+    z-index: 1;
+  }
+}
+
+.info {
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 280px;
+}
+
+.info__underlined {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.link {
+  @include button;
+  @include interactive;
+  display: block;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  width: 100%;
+  padding: 14px 0;
+}

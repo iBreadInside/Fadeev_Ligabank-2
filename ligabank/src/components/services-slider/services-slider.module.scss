@@ -1,0 +1,67 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+.tabs {
+  display: none;
+}
+
+.services_slider {
+  min-height: 362px;
+  background-color: $grey--background;
+}
+
+.service_slide {
+  position: relative;
+  padding: 56px 15px;
+
+  &:nth-child(1) .img {
+    background-image: url('../../img/tabs/piggybank.jpg');
+  }
+
+  &:nth-child(2) .img {
+    background-image: url('../../img/tabs/car.jpg');
+    background-position: 42% 87%;
+    background-size: 222%;
+    top: 13%;
+  }
+
+  &:nth-child(3) .img {
+    background-image: url('../../img/tabs/lock.jpg');
+    background-position: 49% 87%;
+    background-size: 170%;
+  }
+
+  &:nth-child(4) .img {
+    background-image: url('../../img/tabs/mobile.jpg');
+    background-position: 50%;
+    background-size: 200%;
+    top: 12%;
+  }
+
+  @media (min-resolution: 2dppx) {
+    &:nth-child(1) .img {
+      background-image: url('../../img/tabs/piggybank@2x.jpg');
+    }
+
+    &:nth-child(2) .img {
+      background-image: url('../../img/tabs/car@2x.jpg');
+    }
+
+    &:nth-child(3) .img {
+      background-image: url('../../img/tabs/lock@2x.jpg');
+    }
+  }
+}
+
+.img {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  transform: translate(0, 50%);
+  width: 87px;
+  height: 113px;
+  background-color: $grey--background;
+  background-repeat: no-repeat;
+  background-position: 75% 87%;
+  background-size: 300%;
+}

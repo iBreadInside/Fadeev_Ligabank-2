@@ -43,7 +43,7 @@ export default function Slider() {
     <Swiper
       className={styles.swiper}
       pagination={pagination}
-      // autoplay={autoplay}
+      autoplay={autoplay}
       centeredSlides={true}
     >
       {SlidesInfo.map((item) => (

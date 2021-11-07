@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './nav.module.scss';
 import PropTypes from 'prop-types';
-import {NavLink} from 'react-router-dom';
-import {AppRoute} from '../../const';
+import { NavLink } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
 const NavLinks = [
   {

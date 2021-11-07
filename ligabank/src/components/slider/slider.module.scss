@@ -1,5 +1,4 @@
 @import '../../sass/variables.scss';
-// @import '../../sass/mixins.scss';
 
 .swiper {
   width: 100%;
@@ -90,7 +89,7 @@
 
   .slide {
     padding: 102px 19.6vw;
-    background-size: 100%;
+    background-size: auto 100%;
 
     &:nth-child(1) {
       background-size: $desktop-ctrl-width;
