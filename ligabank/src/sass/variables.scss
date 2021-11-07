@@ -16,6 +16,8 @@ $mobile-wrapper-width: 290px;
 $tablet-modal-width: 678px;
 $desktop-modal-login-width: 544px;
 
+$slider-background-size: 1024px;
+
 $desktop-wrapper-width--relative: 85.65vw;
 $tablet-wrapper-width--relative: 88.3vw;
 $mobile-wrapper-width--relative: 90.63vw;
@@ -32,7 +34,6 @@ $grey--line: #C1C2CA;
 $grey--text: #707C87;
 $grey--modal: #394959;
 
-$first-slide-background: linear-gradient(0deg, $dark-blue 0%, $han-purple 67%);
+// $first-slide-background: linear-gradient(0deg, $dark-blue 0%, $han-purple 67%);
 $second-slide-background: #E2E6F1;
 $third-slide-background: #E9F1FE;
-// $banner-gradient--block: linear-gradient(183deg, rgba(56,65,255,0) 66%, rgba(56,65,255,1) 97%);

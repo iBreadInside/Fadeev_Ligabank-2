@@ -23,7 +23,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
-  padding: 13px 30px;
+  padding: 14px 30px;
   border: none;
   border-radius: 4px;
   min-width: 188px;
@@ -34,4 +34,55 @@
 .button__white {
   color: $black--default;
   background-color: $grey--background;
+}
+
+@media (min-width: $tablet-width) {
+  .title {
+    font-size: 46px;
+    line-height: 54px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 30px;
+  }
+
+  .subtitle_short {
+    max-width: 320px;
+  }
+
+  .button {
+    font-size: $font-size--default;
+    line-height: $line-height--default;
+    padding: 14px 34px;
+    min-width: 208px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .title {
+    font-size: 54px;
+    line-height: 63px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 36px;
+  }
+
+  .subtitle_short {
+    max-width: 388px;
+  }
+
+  .button {
+    font-size: 18px;
+    line-height: 21px;
+    padding: 16px 50px;
+  }
+
+  .button__white {
+    padding: 16px 40px;
+  }
 }
