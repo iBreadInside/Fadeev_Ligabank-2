@@ -8,6 +8,16 @@
 .services_slider {
   min-height: 362px;
   background-color: $grey--background;
+
+  & .pag:nth-child(n) {
+    margin: 0 2px 1px;
+    background: $dark-blue;
+    opacity: 1;
+  }
+
+  & .pag__active:nth-child(n) {
+    background: $pagination--active;
+  }
 }
 
 .service_slide {
@@ -64,4 +74,38 @@
   background-repeat: no-repeat;
   background-position: 75% 87%;
   background-size: 300%;
+}
+
+@media (min-width: $tablet-width) {
+  .services_slider {
+    min-height: 380px;
+
+    & .pag:nth-child(n) {
+      margin: 0 4px 10px;
+    }
+  }
+
+  .service_slide {
+    padding: 56px 45px;
+
+    & .img:nth-child(n) {
+      top: -18%;
+      right: 6%;
+      width: 289px;
+      height: 260px;
+      background-size: 135%;
+      background-position: 95%;
+    }
+
+    &:nth-child(3) .img {
+      background-size: 120%;
+      background-position: 44%;
+    }
+
+    &:nth-child(4) .img {
+      background-position: 49% -61%;;
+    }
+  }
+
+
 }

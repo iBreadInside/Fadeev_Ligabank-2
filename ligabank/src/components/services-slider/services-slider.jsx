@@ -1,20 +1,16 @@
 import React from 'react';
-import styles from './services-slider.module.scss';
 // Slider imports
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import SwiperCore, { Pagination } from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/modules/pagination/pagination.scss';
-import './services-slider.scss';
-// import './slider.scss';
+import styles from './services-slider.module.scss';
 // Icons  imports
 import depositIcon from '../../img/svg/tabs/vault.svg';
 import creditIcon from '../../img/svg/tabs/cards.svg';
 import insuranceIcon from '../../img/svg/tabs/security.svg';
 import onlineIcon from '../../img/svg/tabs/phone.svg';
 import ServicesItem from '../services-item/services-item';
-
-SwiperCore.use([Pagination]);
 
 const SERVICES = [
   {
@@ -32,7 +28,7 @@ const SERVICES = [
     id: 2,
     tabName: 'Кредиты',
     tabIcon: creditIcon,
-    title: 'Лига Банк выдает кредиты под любые цели',
+    title: 'Лига Банк выдает кредиты под\u00A0любые\u00A0цели',
     advantages: [
       'Ипотечный кредит',
       'Автокредит',
@@ -63,6 +59,14 @@ const SERVICES = [
   }
 ];
 
+const PaginationSettings = {
+  'bulletActiveClass': styles.pag__active,
+  'bulletClass': `swiper-pagination-bullet ${styles.pag}`,
+  'horizontalClass': 'hor-pag'
+};
+
+SwiperCore.use([Pagination]);
+
 export default function ServicesSlider() {
   return(
     <>
@@ -80,7 +84,7 @@ export default function ServicesSlider() {
       <Swiper
         className={styles.services_slider}
         centeredSlides={true}
-        pagination={true}
+        pagination={PaginationSettings}
       >
         {SERVICES.map((service) => (
           <SwiperSlide

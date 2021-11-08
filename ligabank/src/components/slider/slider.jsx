@@ -2,12 +2,9 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import 'swiper/swiper.scss';
 import 'swiper/modules/pagination/pagination.scss';
-import './slider.scss';
 import styles from './slider.module.scss';
 import SlideItem from '../slide-item/slide-item';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
-
-SwiperCore.use([Pagination, Autoplay]);
 
 const TIMING = 4000;
 
@@ -27,23 +24,25 @@ const SlidesInfo = [
   }
 ];
 
-const pagination = {
+const PaginationSettings = {
   'clickable': true,
   'bulletActiveClass': styles.pag__active,
   'bulletClass': `swiper-pagination-bullet ${styles.pag}`,
 };
 
-const autoplay = {
+const AutoplaySettings = {
   'delay': TIMING,
   'disableOnInteraction': false,
 };
+
+SwiperCore.use([Pagination, Autoplay]);
 
 export default function Slider() {
   return(
     <Swiper
       className={styles.swiper}
-      pagination={pagination}
-      autoplay={autoplay}
+      pagination={PaginationSettings}
+      autoplay={AutoplaySettings}
       centeredSlides={true}
     >
       {SlidesInfo.map((item) => (
