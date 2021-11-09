@@ -80,7 +80,7 @@
 
   .advantages {
     margin-left: 21px;
-    margin-bottom: 28px;
+    margin-bottom: 29px;
     max-width: $mobile-width;
   }
 
@@ -117,5 +117,44 @@
     line-height: $line-height--default;
     width: fit-content;
     padding: 14px 32px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .title {
+    font-size: 22px;
+    line-height: 31px;
+    max-width: 395px;
+    margin-bottom: 29px;
+  }
+
+  .advantages {
+    max-width: 392px;
+    margin-bottom: 31px;
+  }
+
+  .advantages__short {
+    & .item:nth-child(1) {
+      max-width: 215px;
+    }
+
+    & .item:nth-child(2) {
+      max-width: 357px;
+    }
+  }
+
+  .item {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .info {
+    font-size: 18px;
+    line-height: 25px;
+    max-width: 361px;
+  }
+
+  .link {
+    padding: 16px 32px;
   }
 }

@@ -10,7 +10,7 @@
   background-color: $grey--background;
 
   & .pag:nth-child(n) {
-    margin: 0 2px 1px;
+    margin: 0 2px -5px;
     background: $dark-blue;
     opacity: 1;
   }
@@ -22,7 +22,7 @@
 
 .service_slide {
   position: relative;
-  padding: 56px 15px;
+  padding: 56px 15px 0;
 
   &:nth-child(1) .img {
     background-image: url('../../img/tabs/piggybank.jpg');
@@ -32,7 +32,7 @@
     background-image: url('../../img/tabs/car.jpg');
     background-position: 42% 87%;
     background-size: 222%;
-    top: 13%;
+    top: 15%;
   }
 
   &:nth-child(3) .img {
@@ -45,7 +45,7 @@
     background-image: url('../../img/tabs/mobile.jpg');
     background-position: 50%;
     background-size: 200%;
-    top: 12%;
+    top: 13%;
   }
 
   @media (min-resolution: 2dppx) {
@@ -65,7 +65,7 @@
 
 .img {
   position: absolute;
-  top: 10%;
+  top: 12%;
   right: 0;
   transform: translate(0, 50%);
   width: 87px;
@@ -81,15 +81,15 @@
     min-height: 380px;
 
     & .pag:nth-child(n) {
-      margin: 0 4px 10px;
+      margin: 0 4px 1px;
     }
   }
 
   .service_slide {
-    padding: 56px 45px;
+    padding: 56px 45px 0;
 
     & .img:nth-child(n) {
-      top: -18%;
+      top: -22%;
       right: 6%;
       width: 289px;
       height: 260px;
@@ -106,6 +106,94 @@
       background-position: 49% -61%;;
     }
   }
+}
 
+@media (min-width: $desktop-width) {
+  .services {
+    @include wrapper;
+  }
 
+  .tabs {
+    display: block;
+  }
+
+  .tab_list {
+    @include list-style-none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .service_tab {
+    @include interactive;
+    position: relative;
+    display: flex;
+    flex: 1 1 25%;
+    min-height: 93px;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 15%;
+      left: 25%;
+      transform: translate(50%, 50%);
+      width: 34px;
+      height: 33px;
+      background-color: transparent;
+      background-image: url('../../img/svg/tabs/vault.svg');
+      background-repeat: no-repeat;
+    }
+
+    &:nth-child(2)::before {
+      background-image: url('../../img/svg/tabs/cards.svg');
+    }
+
+    &:nth-child(3)::before {
+      left: 19%;
+      background-image: url('../../img/svg/tabs/security.svg');
+    }
+
+    &:nth-child(4)::before {
+      left: 15%;
+      background-image: url('../../img/svg/tabs/phone.svg');
+    }
+  }
+
+  .service_tab__active {
+    background-color: $grey--background;
+  }
+
+  .tab_name {
+    text-align: center;
+    margin-left: 36px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .services_slider {
+    height: 410px;
+  }
+
+  .service_slide {
+    padding: 53px 70px;
+    min-height: 410px;
+
+    &:nth-child(n) .img {
+      top: -21%;
+      right: 12%;
+      width: 440px;
+      height: 290px;
+      background-size: 100%;
+    }
+
+    &:nth-child(3) .img {
+      top: -25%;
+    }
+
+    &:nth-child(4) .img {
+      top: -24%;
+    }
+  }
 }

@@ -1,22 +1,15 @@
-import React from 'react';
-// Slider imports
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import SwiperCore, { Pagination } from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/modules/pagination/pagination.scss';
 import styles from './services-slider.module.scss';
-// Icons  imports
-import depositIcon from '../../img/svg/tabs/vault.svg';
-import creditIcon from '../../img/svg/tabs/cards.svg';
-import insuranceIcon from '../../img/svg/tabs/security.svg';
-import onlineIcon from '../../img/svg/tabs/phone.svg';
 import ServicesItem from '../services-item/services-item';
 
 const SERVICES = [
   {
-    id: 1,
+    id: 0,
     tabName: 'Вклады',
-    tabIcon: depositIcon,
     title: 'Вклады Лига Банка – это выгодная инвестиция в свое будущее',
     advantages: [
       'Проценты по вкладам до 7%',
@@ -25,9 +18,8 @@ const SERVICES = [
     ],
     linkTo: '#'
   },{
-    id: 2,
+    id: 1,
     tabName: 'Кредиты',
-    tabIcon: creditIcon,
     title: 'Лига Банк выдает кредиты под\u00A0любые\u00A0цели',
     advantages: [
       'Ипотечный кредит',
@@ -36,10 +28,9 @@ const SERVICES = [
     ],
     additionalText: 'Рассчитайте ежемесячный платеж и ставку по кредиту воспользовавшись нашим кредитным калькулятором'
   },{
-    id: 3,
+    id: 2,
     tabName: 'Страхование',
-    tabIcon: insuranceIcon,
-    title: 'Лига Страхование — застрахуем все что захотите',
+    title: 'Лига Страхование — застрахуем все\u00A0что\u00A0захотите',
     advantages: [
       'Автомобильное страхование',
       'Страхование жизни и здоровья',
@@ -47,12 +38,11 @@ const SERVICES = [
     ],
     linkTo: '#'
   },{
-    id: 4,
+    id: 3,
     tabName: 'Онлайн-сервисы',
-    tabIcon: onlineIcon,
     title: 'Лига Банк — это огромное количество онлайн-сервисов для вашего удобства',
     advantages: [
-      'Мобильный банк, который всегда под рукой',
+      'Мобильный банк, который\u00A0всегда под рукой',
       'Приложение Лига-проездной позволит вам оплачивать билеты по всему миру'
     ],
     linkTo: '#'
@@ -62,19 +52,32 @@ const SERVICES = [
 const PaginationSettings = {
   'bulletActiveClass': styles.pag__active,
   'bulletClass': `swiper-pagination-bullet ${styles.pag}`,
-  'horizontalClass': 'hor-pag'
 };
 
 SwiperCore.use([Pagination]);
 
 export default function ServicesSlider() {
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
+  const swiperRef = useRef();
+
+  const handleTabClick = (id) => {
+    setActiveSlideIndex(id);
+    swiperRef.current?.swiper.slideTo(id);
+  };
+
   return(
-    <>
+    <section className={styles.services}>
       <nav className={styles.tabs}>
-        <ul className={styles.tabList}>
+        <ul className={styles.tab_list}>
           {SERVICES.map((service) => (
-            <li className={styles.serviceTab}>
-              {service.tabIcon}
+            <li
+              key={service.id}
+              id={service.id}
+              tabIndex={0}
+              className={`${styles.service_tab} ${activeSlideIndex === service.id ? styles.service_tab__active : ''}`}
+              onClick={() => handleTabClick(service.id)}
+            >
               <p className={styles.tab_name}>{service.tabName}</p>
             </li>
           ))}
@@ -83,8 +86,16 @@ export default function ServicesSlider() {
 
       <Swiper
         className={styles.services_slider}
-        centeredSlides={true}
         pagination={PaginationSettings}
+        ref={swiperRef}
+        breakpoints={
+          {
+            1024: {
+              pagination: false,
+              allowTouchMove: false,
+            }
+          }
+        }
       >
         {SERVICES.map((service) => (
           <SwiperSlide
@@ -96,6 +107,6 @@ export default function ServicesSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </section>
   );
 }

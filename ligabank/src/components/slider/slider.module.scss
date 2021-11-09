@@ -89,6 +89,11 @@
 @media (min-width: $desktop-width) {
   .swiper {
     min-height: 400px;
+    margin-bottom: 60px;
+  }
+
+  .swiper .pag:nth-child(n) {
+    margin: 0 4px 26px;
   }
 
   .slide {
