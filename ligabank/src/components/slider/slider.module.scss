@@ -1,12 +1,11 @@
 @import '../../sass/variables.scss';
-// @import '../../sass/mixins.scss';
 
 .swiper {
   width: 100%;
   height: 226px;
 
   & .pag:nth-child(n) {
-    margin: 0 2px;
+    margin: 0 2px -5px;
     background: $dark-blue;
     opacity: 1;
   }
@@ -16,7 +15,7 @@
   }
 
   & .pag:nth-child(2) + .pag__active {
-    background: #E0E0E0;
+    background: $pagination--active;
   }
 }
 
@@ -31,7 +30,6 @@
     background-position: 43% 76%;
     background-size: $slider-background-size;
     background-repeat: no-repeat;
-
 
     @media (min-resolution: 2dppx) {
       background-image: url('../../img/slider/cards@2x.png');
@@ -77,6 +75,11 @@
     background-position: 62% 76%;
     background-size: $slider-background-size;
 
+    &:nth-child(1) {
+      background-position: 64% 48%;
+      background-size: 1067px;
+    }
+
     &:nth-child(3) {
       background-position: 50% 76%;
     }
@@ -86,11 +89,16 @@
 @media (min-width: $desktop-width) {
   .swiper {
     min-height: 400px;
+    margin-bottom: 60px;
+  }
+
+  .swiper .pag:nth-child(n) {
+    margin: 0 4px 26px;
   }
 
   .slide {
     padding: 102px 19.6vw;
-    background-size: 100%;
+    background-size: auto 100%;
 
     &:nth-child(1) {
       background-size: $desktop-ctrl-width;
