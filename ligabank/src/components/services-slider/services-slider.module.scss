@@ -125,19 +125,17 @@
 
   .service_tab {
     @include interactive;
-    position: relative;
     display: flex;
     flex: 1 1 25%;
     min-height: 93px;
     justify-content: center;
     align-items: center;
 
-    &::before {
+    & .tab_name::before {
       position: absolute;
       content: '';
-      top: 15%;
-      left: 25%;
-      transform: translate(50%, 50%);
+      top: -6px;
+      left: -41px;
       width: 34px;
       height: 33px;
       background-color: transparent;
@@ -145,17 +143,17 @@
       background-repeat: no-repeat;
     }
 
-    &:nth-child(2)::before {
+    &:nth-child(2) .tab_name::before {
       background-image: url('../../img/svg/tabs/cards.svg');
     }
 
-    &:nth-child(3)::before {
-      left: 19%;
+    &:nth-child(3) .tab_name::before {
+      left: -37px;
       background-image: url('../../img/svg/tabs/security.svg');
     }
 
-    &:nth-child(4)::before {
-      left: 15%;
+    &:nth-child(4) .tab_name::before {
+      left: -35px;
       background-image: url('../../img/svg/tabs/phone.svg');
     }
   }
@@ -165,6 +163,7 @@
   }
 
   .tab_name {
+    position: relative;
     text-align: center;
     margin-left: 36px;
     font-weight: 500;
@@ -183,8 +182,8 @@
     &:nth-child(n) .img {
       top: -21%;
       right: 12%;
-      width: 440px;
-      height: 290px;
+      width: 32.2vw;
+      height: 21.2vw;
       background-size: 100%;
     }
 
