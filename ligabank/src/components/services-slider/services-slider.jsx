@@ -57,7 +57,7 @@ const PaginationSettings = {
 SwiperCore.use([Pagination]);
 
 export default function ServicesSlider() {
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(1);
 
   const swiperRef = useRef();
 

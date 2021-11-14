@@ -1,0 +1,187 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+.section {
+  @include wrapper;
+  margin: 54px auto;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  line-height: 31px;
+}
+
+.form {
+  margin-top: 21px;
+}
+
+.fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legend {
+  margin-bottom: 14px;
+
+  &__params {
+    margin-bottom: 10px;
+  }
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.select {
+  @include list-style-none;
+  border: 1px solid $black--default;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.param,
+.option {
+  @include interactive;
+  width: 100%;
+  height: 59px;
+  padding: 0 15px;
+  border-radius: 4px;
+  border: 1px solid $black--default;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  border: none;
+
+  &__menu {
+    &:not(:first-child),
+    &:not(:last-child) {
+      border-bottom: 1px solid $grey--line;
+    }
+
+    &:not(:first-child) {
+      font-weight: normal;
+    }
+
+    &:first-child {
+      border-radius: 0;
+      border-bottom: 1px solid $black--default;
+      background: url('../../img/svg/select.svg') no-repeat;
+      background-position: right 13px top 50%;
+    }
+  }
+}
+
+.param {
+  text-align: center;
+}
+
+.param__invalid {
+  color: red;
+  border-color: red;
+
+  &:hover,
+  &:focus {
+    outline-color: red;
+  }
+}
+
+.input_wrapper {
+  position: relative;
+}
+
+.ctrl_btn {
+  @include interactive;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 15%;
+  left: 22px;
+  padding: 0;
+  transform: translate(0, 50%);
+  background-color: transparent;
+  border: none;
+
+  &::before,
+  &__plus::after {
+    position: absolute;
+    content: '';
+    bottom: 45%;
+    right: 2px;
+    width: 16px;
+    height: 16px;
+  }
+
+  &::before {
+    border-bottom: 2px solid $black--default;
+  }
+
+  &__plus {
+    left: auto;
+    right: 13px;
+
+    &::after {
+      bottom: 2px;
+      right: 45%;
+      border-right: 2px solid $black--default;
+    }
+  }
+}
+
+.tip {
+  color: $grey--text;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  margin-top: 8px;
+
+  &__first_payment {
+    margin-top: 5px;
+  }
+
+  &__duration {
+    margin-top: 0;
+  }
+}
+
+.data {
+  padding-top: 9px;
+}
+
+.input_range {
+  @include inputRange;
+  @include interactive;
+}
+
+/* Input Thumb */
+.first_payment_range::-webkit-slider-thumb {
+  @include rangeThumb;
+  @include interactive;
+}
+
+.first_payment_range::-moz-range-thumb {
+  @include rangeThumb;
+  @include interactive;
+  border-color: transparent;
+}
+
+.first_payment_range::-ms-thumb {
+  @include rangeThumb;
+  @include interactive;
+}
+
+.duration {
+  padding-top: 9px;
+}
+
+.duration_tips {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+}

@@ -16,6 +16,9 @@ export const BtnType = {
 export const InputType = {
   TEXT: 'text',
   PASSWORD: 'password',
+  CHECKBOX: 'checkbox',
+  RANGE: 'range',
+  NUMBER: 'number',
 };
 
 export const LocStorKey = {
