@@ -1,141 +1,90 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
 .fieldset {
   grid-column: 1/2;
-  margin: 0 0 63px 0;
+  margin: 0 0 34px 0;
   padding: 0;
-
   border: none;
-
-  @media(max-width: 1023px) {
-    width: 100%;
-    margin-bottom: 38px;
-  }
-
-  @media(max-width: 767px) {
-    margin-bottom: 34px;
-  }
 }
 
 .legend {
-  margin-bottom: 23px;
+  @include list-style-none;
+  margin-bottom: 12px;
   padding: 0;
-
-  font-size: 22px;
+  font-size: $font-size--default;
   font-weight: 500;
+}
 
-  @media(max-width: 1023px) {
-    margin-bottom: 19px;
-
-    font-size: 18px;
-  }
-
-  @media(max-width: 767px) {
-    margin-bottom: 12px;
-
-    font-size: 16px;
-  }
+.list {
+  @include list-style-none;
 }
 
 .item {
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 14px;
 
   &:last-child {
     margin-bottom: 0;
   }
-
-  @media(max-width: 1023px) {
-    margin-bottom: 20px;
-  }
-
-  @media(max-width: 767px) {
-    margin-bottom: 14px;
-  }
 }
 
 .label {
-  font-size: 16px;
-  color: var(--blue-3);
+  font-size: $font-size--default;
+  color: $black--default;
 }
 
 .input {
   width: 100%;
-  padding: 18px 50px;
+  padding: 20px 50px;
   margin-top: 10px;
-
-  border: 1px solid var(--black);
+  border: 1px solid $black--default;
   border-radius: 4px;
   text-align: center;
   font-weight: 500;
-  font-size: 18px;
-  outline-color: var(--blue);
+  font-size: $font-size--default;
+  outline-color: $han-purple;
   cursor: pointer;
 
   &:focus {
-    border-color: var(--blue);
+    border-color: $han-purple;
   }
 
   &__error {
-    border: 1px solid var(--red);
-    outline-color: var(--red);
-  }
-
-  @media(max-width: 1023px) {
-    padding-bottom: 20px;
-    padding-top: 20px;
-
-    font-size: 16px;
+    border: 1px solid red;
+    outline-color: red;
   }
 }
 
 .notice {
   margin: 9px 0 0 0;
-
   font-size: 14px;
-  color: var(--gray-2);
+  color: $grey--text;
 }
 
 .control {
+  @include interactive;
   position: absolute;
   width: 68px;
   height: 60px;
   padding: 0;
-
   border: none;
   background-color: transparent;
   background-repeat: no-repeat;
-  background-position: center;
   cursor: pointer;
-
-  &:focus {
-    outline-color: var(--blue);
-  }
 
   &__plus {
     top: 25%;
     right: 0;
-
-    background-image: url('./plus.svg');
-
-    @media(max-width: 767px) {
-      background-position: 70% center;
-    }
+    background-image: url('../../img/svg/plus.svg');
+    background-position: 70% center;
   }
 
   &__minus {
     top: 25%;
     left: 0;
-    background-image: url('./minus.svg');
-
-    @media(max-width: 767px) {
-      background-position: 45% center;
-    }
-  }
-
-  @media(max-width: 767px) {
-
-    &:focus {
-      outline: none;
-    }
+    background-image: url('../../img/svg/minus.svg');
+    background-position: 45% center;
   }
 }
 
@@ -145,12 +94,12 @@
   width: 100%;
   margin: 20px 0 10px 0;
   height: 1px;
-  background-color: var(--gray-2);
+  background-color: $grey--line;
   cursor: pointer;
 
   &::-webkit-slider-runnable-track {
     height: 1px;
-    background-color: var(--gray-2);
+    background-color: $grey--line;
   }
 
   &::-webkit-slider-thumb {
@@ -158,7 +107,7 @@
     width: 14px;
     height: 14px;
     margin-top: -6px;
-    background-color: var(--blue);
+    background-color: $han-purple;
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 0.3s, transform 0.3s;
@@ -170,7 +119,7 @@
 
   &::-moz-range-track {
     height: 1px;
-    background-color: var(--gray-2);
+    background-color: $grey--line;
   }
 
   &::-moz-range-thumb {
@@ -178,7 +127,7 @@
     width: 14px;
     height: 14px;
     margin-top: -6px;
-    background-color: var(--blue);
+    background-color: $han-purple;
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 0.3s, transform 0.3s;
@@ -193,17 +142,13 @@
   margin: 0;
   display: flex;
   justify-content: space-between;
-
-  color: var(--gray-2);
-
-  @media(max-width: 1023px) {
-    font-size: 14px;
-  }
+  color: $grey--background;
+  font-size: 14px;
 }
 
 .checkbox {
   display: flex;
-  align-items: baseline;
+  font-size: 14px;
   cursor: pointer;
 
   input {
@@ -214,23 +159,68 @@
   span {
     margin-left: 8px;
   }
-
-  @media(max-width: 767px) {
-    align-items: center;
-
-    font-size: 14px;
-  }
 }
 
 .error {
   position: absolute;
+  width: 100px;
+  font-size: 12px;
+  text-align: right;
   right: 0;
+  color: red;
+}
 
-  color: var(--red);
 
-  @media(max-width: 767px) {
-    width: 100px;
-    font-size: 12px;
-    text-align: right;
+@media (min-width: $tablet-width) {
+  .fieldset {
+    margin-bottom: 38px;
+  }
+
+  .legend {
+    margin-bottom: 19px;
+    font-size: 18px;
+  }
+
+  .item {
+    margin-bottom: 20px;
+  }
+
+  .control {
+    background-position: center;
+  }
+
+  .checkbox {
+    align-items: baseline;
+  }
+
+  .error {
+    text-align: center;
+    font-size: $font-size--default;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .fieldset {
+    width: 100%;
+    margin: 0 0 63px 0;
+    grid-column: 1/2;
+  }
+
+  .legend {
+    margin-bottom: 23px;
+    font-size: 22px;
+  }
+
+  .item {
+    margin-bottom: 25px;
+  }
+
+  .input {
+    padding: 18px 50px;
+    font-size: 18px;
+  }
+
+  .limit {
+    font-size: $font-size--default;
   }
 }

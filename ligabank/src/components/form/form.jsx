@@ -270,7 +270,7 @@ function Form({creditState, setCreditState}) {
   return (
     <fieldset className={styles.fieldset}>
       <legend className={styles.legend}>Шаг 2. Введите параметры кредита</legend>
-      <ul>
+      <ul className={styles.list}>
         <li className={styles.item}>
           {
             priceError && <span className={styles.error}>Некорректное значение</span>
