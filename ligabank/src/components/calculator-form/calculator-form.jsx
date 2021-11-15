@@ -66,20 +66,31 @@ export default function CalculatorForm() {
   };
 
   const handleFirstPaymentChange = (value) => {
-    if (value < Math.round(estateCost / MIN_FIRST_PAYMENT_PERCENT)) {
-      // console.log(value, firstPaymentRef.current.value);
-      setFirstPayment(Math.round(estateCost / MIN_FIRST_PAYMENT_PERCENT));
-    } else if (value > estateCost) {
-      // console.log(value, firstPaymentRef.current.value, firstPayment);
-      setFirstPayment(estateCost);
-      // value = estateCost;
-    } else {
-      setFirstPayment(value);
-      // setFirstPaymentRange(Math.round(estateCost * 100 / value));
-      // firstPaymentRangeRef.current?.value = value;
-      firstPaymentRangeRef.current.value = value * 100 / estateCost;
-      console.log(Math.round(estateCost / value));
-    };
+    const min = firstPaymentRef.current.min;
+    // console.log(value, firstPayment);
+    // setFirstPayment(value);
+    // console.log(firstPayment);
+    if (value < min) {
+      setFirstPayment(min);
+      firstPaymentRef.current.isAllowed = false;
+      // firstPaymentRef.current.value = estateCost;
+      console.log(firstPayment, value, firstPaymentRef.current.value);
+    }
+    // if (value < Math.round(estateCost / MIN_FIRST_PAYMENT_PERCENT)) {
+    //   // console.log(value, firstPaymentRef.current.value);
+    //   setFirstPayment(Math.round(estateCost / MIN_FIRST_PAYMENT_PERCENT));
+    // } else if (value > estateCost) {
+    //   console.log(value, firstPaymentRef.current.value, firstPayment);
+    //   console.log(typeof value, typeof firstPaymentRef.current.value, typeof firstPayment)
+    //   setFirstPayment(estateCost);
+    //   // firstPaymentRef.current.value = estateCost;
+    // } else {
+    //   setFirstPayment(value);
+    //   // setFirstPaymentRange(Math.round(estateCost * 100 / value));
+    //   // firstPaymentRangeRef.current?.value = value;
+    //   firstPaymentRangeRef.current.value = value * 100 / estateCost;
+    //   // console.log(Math.round(estateCost / value));
+    // };
   };
 
   const handleFirstPaymentRangeChange = () => {
@@ -161,6 +172,8 @@ export default function CalculatorForm() {
               getInputRef={firstPaymentRef}
               value={firstPayment}
               isNumericString={true}
+              min={estateCost / MIN_FIRST_PAYMENT_PERCENT}
+              isAllowed={true}
               onValueChange={({floatValue}) => handleFirstPaymentChange(floatValue)}
             />
 
@@ -168,7 +181,7 @@ export default function CalculatorForm() {
               className={styles.input_range}
               ref={firstPaymentRangeRef}
               type={InputType.RANGE}
-              min={MIN_FIRST_PAYMENT_PERCENT}
+              min={estateCost * MIN_FIRST_PAYMENT_PERCENT / 100}
               step={FIRST_PAYMENT_STEP}
               defaultValue={MIN_FIRST_PAYMENT_PERCENT}
               onInput={handleFirstPaymentRangeChange}
@@ -177,7 +190,7 @@ export default function CalculatorForm() {
             <p className={`${styles.tip} ${styles.tip__first_payment}`}>{`${MIN_FIRST_PAYMENT_PERCENT}%`}</p>
           </div>
 
-          <div className={styles.data}>
+          {/* <div className={styles.data}>
             <label className={styles.label} htmlFor='duration'>Срок кредитования</label>
             <input
               className={styles.param}
@@ -200,7 +213,7 @@ export default function CalculatorForm() {
               <p className={`${styles.tip} ${styles.tip__duration}`}>{`${MIN_DURATION} лет`}</p>
               <p className={`${styles.tip} ${styles.tip__duration}`}>{`${MAX_DURATION} лет`}</p>
             </div>
-          </div>
+          </div> */}
 
           {/* <div className={styles.mother_capital}> */}
             <input type={InputType.CHECKBOX} id='mother' />

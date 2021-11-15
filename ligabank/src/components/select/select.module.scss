@@ -1,0 +1,121 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+.fieldset {
+  grid-column: 1/2;
+  padding: 0;
+  margin: 0 0 35px 0;
+
+  border: none;
+
+  @media(max-width: 1023px) {
+    width: 100%;
+  }
+
+  @media(max-width: 767px) {
+    margin-bottom: 27px;
+  }
+}
+
+.legend {
+  margin-bottom: 25px;
+  padding: 0;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  @media(max-width: 1023px) {
+    margin-bottom: 22px;
+    font-size: 18px;
+  }
+
+  @media(max-width: 767px) {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+}
+
+.list {
+  @include list-style-none;
+  border: 1px solid $black--default;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  cursor: pointer;
+}
+
+.item {
+  position: relative;
+  border-bottom: 1px solid $grey--line;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.button {
+  width: 100%;
+  position: relative;
+  display: block;
+  padding: 21px 24px 20px 24px;
+
+  cursor: pointer;
+  font-weight: 600;
+  text-align: left;
+  background-color: transparent;
+  border: 1px solid $black--default;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-size: inherit;
+  outline-color: $han-purple;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    right: 22px;
+    top: 25px;
+    width: 18px;
+    height: 11px;
+
+    background-image: url('./arrow.svg');
+    background-repeat: no-repeat;
+    background-size: 18px 11px;
+    background-position: 90% center;
+  }
+
+  &__open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+
+  @media(max-width: 767px) {
+    padding-left: 13px;
+    font-size: 16px;
+
+    &:before {
+      right: 13px;
+    }
+  }
+}
+
+.label {
+  display: block;
+  width: 100%;
+  padding: 20px 14px;
+
+  cursor: pointer;
+}
+
+.input {
+  &:focus + label {
+    background-color: $grey--background;
+    border: none;
+  }
+}
