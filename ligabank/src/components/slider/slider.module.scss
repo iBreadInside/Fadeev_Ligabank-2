@@ -21,7 +21,7 @@
 
 .slide {
   padding: 39px 4.7vw;
-  background-position: 63% 76%;
+  background-position: 65% 76%;
   background-size: $tablet-width;
 
   &:nth-child(1) {
@@ -50,6 +50,7 @@
     background-color: $third-slide-background;
     background-image: url('../../img/slider/girl.jpg');
     background-repeat: no-repeat;
+    background-position: 63%;
 
     @media (min-resolution: 2dppx) {
       background-image: url('../../img/slider/girl@2x.jpg');

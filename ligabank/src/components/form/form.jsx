@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './form.module.scss';
 import PropTypes from 'prop-types';
-import { Purpose, makeInputString, makeInputNumber } from '../../const';
+import { Purpose, makeInputString, makeInputNumber, BtnType, InputType } from '../../const';
 
 const INPUT_MAX_LENGTH = 12;
 const STRING_ENDS = {
@@ -13,14 +13,14 @@ const deleteLetters = (value) => value.replace(/[a-zа-яё]/gi, '').trim();
 const getPercentFromNumber = (percent, number) => number * percent / 100;
 const getNumberFromPercent = (mainNumber, number) => number * 100 / mainNumber;
 
-const InputsNames = {
+const InputName = {
   PRICE: 'price',
   PAYMENT: 'payment',
   TIME: 'time',
   RANGE: 'range',
 };
 
-const buttonsNames = {
+const btnName = {
   MINUS: 'minus',
   PLUS: 'plus',
 };
@@ -72,7 +72,7 @@ const timeParams = {
   },
 };
 
-function Form({creditState, setCreditState}) {
+export default function Form({creditState, setCreditState}) {
   const [timeRange, setTimeRange] = useState('');
   const [priceError, setPriceError] = useState(false);
 
@@ -163,15 +163,15 @@ function Form({creditState, setCreditState}) {
     const max = priceParams[purpose].max;
     let newValue;
 
-    if ((value === min && name === buttonsNames.MINUS) || (value === max && name === buttonsNames.PLUS)) {
+    if ((value === min && name === btnName.MINUS) || (value === max && name === btnName.PLUS)) {
       return;
     }
 
-    if (name === buttonsNames.PLUS) {
+    if (name === btnName.PLUS) {
       newValue = value += priceParams[purpose].step;
     }
 
-    if (name === buttonsNames.MINUS) {
+    if (name === btnName.MINUS) {
       newValue = value -= priceParams[purpose].step;
     }
 
@@ -194,7 +194,7 @@ function Form({creditState, setCreditState}) {
       return;
     }
 
-    if (name === InputsNames.RANGE) {
+    if (name === InputName.RANGE) {
       paymentValue = getPercentFromNumber(value, priceValue);
 
       setCreditState((prev) => ({
@@ -205,7 +205,7 @@ function Form({creditState, setCreditState}) {
       return;
     }
 
-    if (name === InputsNames.PAYMENT) {
+    if (name === InputName.PAYMENT) {
       setCreditState((prev) => ({...prev, payment: makeInputString(value)}));
 
       const rangeValue = getNumberFromPercent(priceValue, value);
@@ -247,13 +247,13 @@ function Form({creditState, setCreditState}) {
     }
 
 
-    if (name === InputsNames.TIME) {
+    if (name === InputName.TIME) {
       setCreditState((prev) => ({...prev, time: makeInputString(value)}));
       setTimeRange(value);
       return;
     }
 
-    if (name === InputsNames.RANGE) {
+    if (name === InputName.RANGE) {
       setTimeRange(value);
       setCreditState((prev) => ({...prev, time: makeInputString(value, STRING_ENDS.YEAR)}));
     }
@@ -280,7 +280,7 @@ function Form({creditState, setCreditState}) {
             <input
               className={`${styles.input} ${priceError ? styles.input__error : ''}`}
               type='text'
-              name={InputsNames.PRICE}
+              name={InputName.PRICE}
               value={creditState.price}
               onFocus={handlePriceFocus}
               onChange={handlePriceChange}
@@ -289,16 +289,16 @@ function Form({creditState, setCreditState}) {
           </label>
           <button
             onClick={handleButtonClick}
-            name={buttonsNames.MINUS}
-            type='button'
+            name={btnName.MINUS}
+            type={BtnType.BTN}
             aria-label='Уменьшить значение'
             className={`${styles.control} ${styles.control__minus}`}
           >
           </button>
           <button
             onClick={handleButtonClick}
-            name={buttonsNames.PLUS}
-            type='button'
+            name={btnName.PLUS}
+            type={BtnType.BTN}
             aria-label='Увеличить значение'
             className={`${styles.control} ${styles.control__plus}`}
           >
@@ -310,8 +310,8 @@ function Form({creditState, setCreditState}) {
             Первоначальный взнос
             <input
               className={styles.input}
-              type='text'
-              name={InputsNames.PAYMENT}
+              type={InputType.TEXT}
+              name={InputName.PAYMENT}
               value={creditState.payment}
               onFocus={handlePaymentFocus}
               onChange={handlePaymentChange}
@@ -320,8 +320,8 @@ function Form({creditState, setCreditState}) {
           </label>
           <input
             className={styles.range}
-            type='range'
-            name={InputsNames.RANGE}
+            type={InputType.RANGE}
+            name={InputName.RANGE}
             min={paymentParams[purpose].min}
             max={paymentParams[purpose].max}
             step={paymentParams[purpose].step}
@@ -335,8 +335,8 @@ function Form({creditState, setCreditState}) {
             Срок кредитования
             <input
               className={styles.input}
-              type='text'
-              name={InputsNames.TIME}
+              type={InputType.TEXT}
+              name={InputName.TIME}
               value={creditState.time}
               onBlur={handleTimeBlur}
               onFocus={handleTimeFocus}
@@ -344,9 +344,9 @@ function Form({creditState, setCreditState}) {
             />
           </label>
           <input
-            type='range'
-            className={styles.range}
-            name={InputsNames.RANGE}
+            type={InputType.RANGE}
+            className={`${styles.range} ${styles.range__time}`}
+            name={InputName.RANGE}
             min={timeParams[purpose].min}
             max={timeParams[purpose].max}
             step={timeParams[purpose].step}
@@ -365,7 +365,7 @@ function Form({creditState, setCreditState}) {
           <li className={styles.item}>
             <label className={styles.checkbox}>
               <input
-                type='checkbox'
+                type={InputType.CHECKBOX}
                 checked={creditState.capital}
                 onChange={() => setCreditState((prev) => ({...prev, capital: !prev.capital}))}
               />
@@ -379,7 +379,7 @@ function Form({creditState, setCreditState}) {
             <li className={styles.item}>
               <label className={styles.checkbox}>
                 <input
-                  type='checkbox'
+                  type={InputType.CHECKBOX}
                   checked={creditState.casco}
                   onChange={() => setCreditState((prev) => ({...prev, casco: !prev.casco}))}
                 />
@@ -389,7 +389,7 @@ function Form({creditState, setCreditState}) {
             <li className={styles.item}>
               <label className={styles.checkbox}>
                 <input
-                  type='checkbox'
+                  type={InputType.CHECKBOX}
                   checked={creditState.insurance}
                   onChange={() => setCreditState((prev) => ({...prev, insurance: !prev.insurance}))}
                 />
@@ -416,5 +416,3 @@ Form.propTypes = {
   }).isRequired,
   setCreditState: PropTypes.func.isRequired,
 };
-
-export default Form;

@@ -19,6 +19,9 @@ export const InputType = {
   CHECKBOX: 'checkbox',
   RANGE: 'range',
   NUMBER: 'number',
+  TEL: 'tel',
+  EMAIL: 'email',
+  RADIO: 'radio',
 };
 
 export const LocStorKey = {

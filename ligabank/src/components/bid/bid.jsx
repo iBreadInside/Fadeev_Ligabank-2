@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './bid.module.scss';
-import Button from '../button/button';
 import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
-import { Purpose } from '../../const';
+import { BtnType, InputType, Purpose } from '../../const';
 
 const InputsName = {
   NAME: 'name',
@@ -11,13 +10,14 @@ const InputsName = {
   EMAIL: 'email',
 };
 
-function Bid({number, creditState}) {
+export default function Bid({number, creditState}) {
   const storage = localStorage.getItem('Bid');
   const initialForm = storage ? JSON.parse(storage) : {
     [InputsName.NAME]: '',
     [InputsName.TEL]: '',
     [InputsName.EMAIL]: '',
   };
+
   const [form, setForm] = useState(initialForm);
 
   useEffect(() => {
@@ -65,7 +65,7 @@ function Bid({number, creditState}) {
           name={InputsName.NAME}
           id={InputsName.NAME}
           autoFocus
-          type='text'
+          type={InputType.TEXT}
           placeholder='ФИО'
           required
           value={form[InputsName.NAME]}
@@ -78,7 +78,7 @@ function Bid({number, creditState}) {
           className={styles.input}
           name={InputsName.TEL}
           id={InputsName.TEL}
-          type='tel'
+          type={InputType.TEL}
           placeholder='Телефон'
           required
           value={form[InputsName.TEL]}
@@ -88,20 +88,20 @@ function Bid({number, creditState}) {
         <input
           className={styles.input}
           name={InputsName.EMAIL}
-          id={InputsName.EMAIL}
-          type='email'
+          id={InputType.EMAIL}
+          type={InputType.EMAIL}
           placeholder='E-mail'
           required
           value={form[InputsName.EMAIL]}
           onChange={handleInputChange}
         />
       </fieldset>
-      <Button
-        type='submit'
+      <button
+        type={BtnType.SUBMIT}
         className={styles.submit}
       >
         Отправить
-      </Button>
+      </button>
     </div>
   );
 }
@@ -119,6 +119,3 @@ Bid.propTypes = {
     insurance: PropTypes.bool.isRequired,
   }).isRequired,
 };
-
-export default Bid;
-

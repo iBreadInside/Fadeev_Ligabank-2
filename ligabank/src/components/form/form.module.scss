@@ -30,11 +30,11 @@
 }
 
 .label {
-  font-size: $font-size--default;
   color: $black--default;
 }
 
 .input {
+  @include interactive;
   width: 100%;
   padding: 20px 50px;
   margin-top: 10px;
@@ -46,10 +46,6 @@
   outline-color: $han-purple;
   cursor: pointer;
 
-  &:focus {
-    border-color: $han-purple;
-  }
-
   &__error {
     border: 1px solid red;
     outline-color: red;
@@ -57,7 +53,7 @@
 }
 
 .notice {
-  margin: 9px 0 0 0;
+  margin: 3px 0 0 0;
   font-size: 14px;
   color: $grey--text;
 }
@@ -92,10 +88,14 @@
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  margin: 20px 0 10px 0;
+  margin: 21px 0 10px 0;
   height: 1px;
   background-color: $grey--line;
   cursor: pointer;
+
+  &__time {
+    margin-top: 15px;
+  }
 
   &::-webkit-slider-runnable-track {
     height: 1px;
@@ -142,7 +142,7 @@
   margin: 0;
   display: flex;
   justify-content: space-between;
-  color: $grey--background;
+  color: $grey--text;
   font-size: 14px;
 }
 
@@ -177,12 +177,12 @@
   }
 
   .legend {
-    margin-bottom: 19px;
+    margin-bottom: 18px;
     font-size: 18px;
   }
 
   .item {
-    margin-bottom: 20px;
+    margin-bottom: 19px;
   }
 
   .control {
@@ -191,6 +191,11 @@
 
   .checkbox {
     align-items: baseline;
+
+    span {
+      font-size: $font-size--default;
+      line-height: $line-height--default;
+    }
   }
 
   .error {

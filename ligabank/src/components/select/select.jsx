@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from './select.module.scss';
 import PropTypes from 'prop-types';
-import { Purpose } from '../../const';
+import { BtnType, InputType, Purpose } from '../../const';
 
 const titles = {
   [Purpose.DEFAULT]: 'Выберите цель кредита',
@@ -9,7 +9,7 @@ const titles = {
   [Purpose.CAR]: 'Автомобильное кредитование',
 };
 
-function Select({purpose, setCreditState, setFormState, setBidState}) {
+export default function Select({purpose, setCreditState, setFormState, setBidState}) {
   const [isOpen, setOpen] = useState(false);
 
   const closeSelect = (value) => {
@@ -36,7 +36,7 @@ function Select({purpose, setCreditState, setFormState, setBidState}) {
     <fieldset className={styles.fieldset}>
       <legend className={styles.legend}>Шаг 1. Цель кредита</legend>
       <button
-        type='button'
+        type={BtnType.BTN}
         className={`${styles.button} ${isOpen ? styles.button__open : ''}`}
         onClick={() => setOpen((prev) => !prev)}
       >
@@ -55,10 +55,10 @@ function Select({purpose, setCreditState, setFormState, setBidState}) {
               return (
                 <li className={styles.item} key={value}>
                   <input
-                    type='radio'
+                    type={InputType.RADIO}
                     className={`visually-hidden ${styles.input}`}
                     id={value}
-                    name='radio'
+                    name={InputType.RADIO}
                     value={value}
                     onKeyDown={handleKeyDown}
                   />
@@ -85,5 +85,3 @@ Select.propTypes = {
   setFormState: PropTypes.func.isRequired,
   setBidState: PropTypes.func.isRequired,
 };
-
-export default Select;

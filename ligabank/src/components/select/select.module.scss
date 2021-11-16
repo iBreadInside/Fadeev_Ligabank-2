@@ -2,37 +2,16 @@
 @import '../../sass/mixins.scss';
 
 .fieldset {
-  grid-column: 1/2;
   padding: 0;
-  margin: 0 0 35px 0;
-
+  margin: 0 0 27px 0;
+  width: 100%;
   border: none;
-
-  @media(max-width: 1023px) {
-    width: 100%;
-  }
-
-  @media(max-width: 767px) {
-    margin-bottom: 27px;
-  }
 }
 
 .legend {
-  margin-bottom: 25px;
+  margin-bottom: 16px;
   padding: 0;
-
-  font-size: 22px;
   font-weight: 500;
-
-  @media(max-width: 1023px) {
-    margin-bottom: 22px;
-    font-size: 18px;
-  }
-
-  @media(max-width: 767px) {
-    margin-bottom: 16px;
-    font-size: 16px;
-  }
 }
 
 .list {
@@ -53,28 +32,25 @@
 }
 
 .button {
+  @include interactive;
   width: 100%;
   position: relative;
   display: block;
-  padding: 21px 24px 20px 24px;
+  padding: 20px 24px 20px 13px;
 
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
   text-align: left;
   background-color: transparent;
   border: 1px solid $black--default;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  font-size: inherit;
+  border-radius: 4px;
   outline-color: $han-purple;
 
   &:before {
     content: '';
     position: absolute;
     z-index: 0;
-    right: 22px;
+    right: 13px;
     top: 25px;
     width: 18px;
     height: 11px;
@@ -94,15 +70,6 @@
       transform: rotate(180deg);
     }
   }
-
-  @media(max-width: 767px) {
-    padding-left: 13px;
-    font-size: 16px;
-
-    &:before {
-      right: 13px;
-    }
-  }
 }
 
 .label {
@@ -117,5 +84,38 @@
   &:focus + label {
     background-color: $grey--background;
     border: none;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .legend {
+    margin-bottom: 18px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .fieldset {
+    margin-bottom: 38px;
+  }
+
+  .button {
+    padding-left: 24px;
+
+    &::before {
+      right: 22px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .fieldset {
+    grid-column: 1/2;
+    margin-bottom: 35px;
+  }
+
+  .legend {
+    margin-bottom: 25px;
+    font-size: 22px;
+    line-height: 31px;
   }
 }

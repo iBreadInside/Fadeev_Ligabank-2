@@ -1,9 +1,7 @@
 import React from 'react';
 import styles from './offer.module.scss';
-import Button from '../button/button';
 import PropTypes from 'prop-types';
-import {Purpose, makeInputString, makeInputNumber} from '../../const';
-
+import { Purpose, makeInputString, makeInputNumber, BtnType } from '../../const';
 
 const minimalAmount = {
   [Purpose.MORTGAGE]: 500000,
@@ -18,6 +16,7 @@ const MORTGAGE_RATE = {
   DEFAULT: 9.40,
   SMALL: 8.50,
 };
+
 const CAR_RATE = {
   DEFAULT: 16,
   SMALL: 15,
@@ -41,6 +40,7 @@ const getCarRate = (price, casco, insurance) => {
     return CAR_RATE.SMALL;
   }
 };
+
 const getMonthlyPayment = (sum, percent, time) => {
   const kp = time * 12;
   const ps = percent / 100 / 12;
@@ -48,9 +48,10 @@ const getMonthlyPayment = (sum, percent, time) => {
   const result = ap.toFixed(0);
   return +result;
 };
+
 const getRequiredIncome = (payment) => +(payment * 100 / MAX_PERCENT_FOR_INCOME).toFixed(0);
 
-function Offer({creditState, setBidState}) {
+export default function Offer({creditState, setBidState}) {
   const purpose = creditState.purpose;
   const priceValue = makeInputNumber(creditState.price);
   const paymentValue = makeInputNumber(creditState.payment);
@@ -89,13 +90,13 @@ function Offer({creditState, setBidState}) {
               <p className={styles.term}>Необходимый доход</p>
             </li>
           </ul>
-          <Button
-            type='button'
+          <button
+            type={BtnType.BTN}
             className={styles.button}
             onClick={() => setBidState(true)}
           >
             Оформить заявку
-          </Button>
+          </button>
         </div>
       }
       {
@@ -127,5 +128,3 @@ Offer.propTypes = {
   }).isRequired,
   setBidState: PropTypes.func.isRequired,
 };
-
-export default Offer;
