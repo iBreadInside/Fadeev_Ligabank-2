@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../header/header';
 import MainContent from '../main-content/main-content';
-import Footer from '../footer/footer';
+// import Footer from '../footer/footer';
 
 export default function CreditCalculatorPage() {
   return (

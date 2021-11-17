@@ -1,0 +1,50 @@
+@import '../../sass/mixins.scss';
+
+.calculator {
+  @include wrapper;
+  margin-top: 59px;
+  font-size: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 29px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+@media (min-width: $tablet-width) {
+  .calculator {
+    margin-top: 69px;
+  }
+
+  .title {
+    margin-bottom: 28px;
+    font-size: 32px;
+    line-height: 45px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .calculator {
+    margin-top: 96px;
+  }
+
+  .form {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: 51.5% auto;
+    grid-column-gap: 67px;
+  }
+
+  .title {
+    font-size: 41px;
+    line-height: 57px;
+    margin-bottom: 49px;
+  }
+}

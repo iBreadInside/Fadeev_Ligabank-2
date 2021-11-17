@@ -1,0 +1,121 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+.fieldset {
+  padding: 0;
+  margin: 0 0 27px 0;
+  width: 100%;
+  border: none;
+}
+
+.legend {
+  margin-bottom: 16px;
+  padding: 0;
+  font-weight: 500;
+}
+
+.list {
+  @include list-style-none;
+  border: 1px solid $black--default;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  cursor: pointer;
+}
+
+.item {
+  position: relative;
+  border-bottom: 1px solid $grey--line;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.button {
+  @include interactive;
+  width: 100%;
+  position: relative;
+  display: block;
+  padding: 20px 24px 20px 13px;
+
+  cursor: pointer;
+  font-weight: 500;
+  text-align: left;
+  background-color: transparent;
+  border: 1px solid $black--default;
+  border-radius: 4px;
+  outline-color: $han-purple;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    right: 13px;
+    top: 25px;
+    width: 18px;
+    height: 11px;
+
+    background-image: url('../../img/svg/select.svg');
+    background-repeat: no-repeat;
+    background-size: 18px 11px;
+    background-position: 90% center;
+  }
+
+  &__open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.label {
+  display: block;
+  width: 100%;
+  padding: 20px 14px;
+
+  cursor: pointer;
+}
+
+.input {
+  &:focus + label {
+    background-color: $grey--background;
+    border: none;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .legend {
+    margin-bottom: 18px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .fieldset {
+    margin-bottom: 38px;
+  }
+
+  .button {
+    padding-left: 24px;
+
+    &::before {
+      right: 22px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .fieldset {
+    grid-column: 1/2;
+    margin-bottom: 39px;
+  }
+
+  .legend {
+    margin-bottom: 22px;
+    font-size: 22px;
+    line-height: 31px;
+  }
+}

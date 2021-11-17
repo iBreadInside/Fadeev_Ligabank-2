@@ -41,11 +41,36 @@
   }
 
   &:focus {
-    outline: 2px solid black;
+    outline-color: orange;
   }
 
   &:disabled {
     opacity: .6;
     cursor: default;
   }
+}
+
+@mixin inputRange {
+  -webkit-appearance: none;
+  width: 100%;
+  margin-top: 22px;
+  height: 1px;
+  background: $grey--line;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@mixin rangeThumb {
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: $han-purple;
+}
+
+@mixin rangeTrack {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
 }

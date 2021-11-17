@@ -8,7 +8,7 @@ import ServicesItem from '../services-item/services-item';
 
 const SERVICES = [
   {
-    id: 0,
+    id: 1,
     tabName: 'Вклады',
     title: 'Вклады Лига Банка – это выгодная инвестиция в свое будущее',
     advantages: [
@@ -18,7 +18,7 @@ const SERVICES = [
     ],
     linkTo: '#'
   },{
-    id: 1,
+    id: 2,
     tabName: 'Кредиты',
     title: 'Лига Банк выдает кредиты под\u00A0любые\u00A0цели',
     advantages: [
@@ -28,7 +28,7 @@ const SERVICES = [
     ],
     additionalText: 'Рассчитайте ежемесячный платеж и ставку по кредиту воспользовавшись нашим кредитным калькулятором'
   },{
-    id: 2,
+    id: 3,
     tabName: 'Страхование',
     title: 'Лига Страхование — застрахуем все\u00A0что\u00A0захотите',
     advantages: [
@@ -38,7 +38,7 @@ const SERVICES = [
     ],
     linkTo: '#'
   },{
-    id: 3,
+    id: 4,
     tabName: 'Онлайн-сервисы',
     title: 'Лига Банк — это огромное количество онлайн-сервисов для вашего удобства',
     advantages: [
@@ -57,13 +57,13 @@ const PaginationSettings = {
 SwiperCore.use([Pagination]);
 
 export default function ServicesSlider() {
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(1);
 
   const swiperRef = useRef();
 
   const handleTabClick = (id) => {
     setActiveSlideIndex(id);
-    swiperRef.current?.swiper.slideTo(id);
+    swiperRef.current?.swiper.slideTo(id - 1);
   };
 
   return(
