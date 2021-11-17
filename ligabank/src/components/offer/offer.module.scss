@@ -5,6 +5,7 @@
   width: 100%;
   padding: 36px 15px;
   background-color: $grey--background;
+  margin-bottom: 60px;
 }
 
 .list {
@@ -55,6 +56,7 @@
 @media (min-width: $tablet-width) {
   .offer {
     padding: 56px 60px;
+    margin-bottom: 80px;
   }
 
   .list {
@@ -86,14 +88,16 @@
   .offer {
     grid-row: 1/3;
     grid-column: 2/3;
+    margin-top: 5px;
   }
 
   .list {
     grid-template-columns: auto auto;
     grid-row-gap: 29px;
+    grid-column-gap: 45px;
   }
 
   .title {
-    margin-bottom: 29px;
+    margin-bottom: 22px;
   }
 }

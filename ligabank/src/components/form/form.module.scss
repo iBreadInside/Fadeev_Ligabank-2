@@ -207,7 +207,7 @@
 @media (min-width: $desktop-width) {
   .fieldset {
     width: 100%;
-    margin: 0 0 63px 0;
+    margin: 0 0 68px 0;
     grid-column: 1/2;
   }
 
@@ -216,8 +216,12 @@
     font-size: 22px;
   }
 
+  .notice {
+    margin-top: 9px;
+  }
+
   .item {
-    margin-bottom: 25px;
+    margin-bottom: 23px;
   }
 
   .input {
@@ -227,5 +231,9 @@
 
   .limit {
     font-size: $font-size--default;
+  }
+
+  .range__time {
+    margin-top: 19px;
   }
 }
