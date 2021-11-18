@@ -1,23 +1,21 @@
 import React from 'react';
 import styles from './footer.module.scss';
 import Logo from '../logo/logo';
-import Menu from '../nav/nav';
+import Nav from '../nav/nav';
 import SocialList from '../social-list/social-list';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
-        <section className={styles.info}>
-          <Logo />
-          <address className={styles.adress}>
-            150015, г. Москва, ул. Московская, д. 32
-            Генеральная лицензия Банка России №1050
-            &copy; Лига Банк, 2019
-          </address>
-        </section>
+      <div className={styles.wrapper}>
+        <Logo />
+        <address className={styles.adress}>
+          150015, г. Москва, ул. Московская, д. 32
+          Генеральная лицензия Банка России №1050
+          &copy; Лига Банк, 2019
+        </address>
 
-        <Menu isFooter />
+        <Nav isFooter />
 
         <section className={styles.contacts}>
           <div className={`${styles.call} ${styles.mobile}`}>

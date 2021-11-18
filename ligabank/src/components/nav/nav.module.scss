@@ -5,11 +5,15 @@
   @include list-style-none;
   border-top: 1px solid $grey--line;
   border-bottom: 1px solid $grey--line;
+
+  &__footer {
+    border: none;
+    margin-top: 11px;
+  }
 }
 
 .list__item {
   @include interactive;
-  min-height: 60px;
 
   &:not(:last-child) {
     border-bottom: 1px solid $grey--line;
@@ -17,6 +21,10 @@
 
   &:focus-within {
     outline: 2px solid black;
+  }
+
+  &_footer:not(:last-child) {
+    border: none;
   }
 }
 
@@ -27,6 +35,13 @@
   width: 100%;
   padding-top: 20px;
   padding-left: 15px;
+  padding-bottom: 20px;
+
+  &__footer {
+    padding: 5px 2px;
+    font-size: 14px;
+    line-height: 20px;
+  }
 
   &:focus {
     outline: none;
@@ -42,6 +57,10 @@
     display: flex;
     flex-wrap: wrap;
     border: none;
+
+    &__footer {
+      flex-direction: column;
+    }
   }
 
   .list__item {
@@ -58,14 +77,32 @@
     line-height: 16px;
     min-height: fit-content;
     padding-left: 0;
+
+    &__footer {
+      font-weight: 500;
+      font-size: $font-size--default;
+      line-height: 22px;
+    }
   }
 }
 
 @media (min-width: $desktop-width) {
+  .list__footer {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    margin-top: 5px;
+    margin-left: 18px;
+  }
+
   .link {
     font-size: 16px;
     line-height: 19px;
     padding-top: 16px;
+
+    &__footer {
+      line-height: 22px;
+      padding-top: 4px;
+    }
   }
 
   .list__item {

@@ -5,10 +5,11 @@
   @include list-style-none;
   display: flex;
   justify-content: flex-start;
+  margin-left: -31px;
 }
 
 .item:not(:last-child) {
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 .link {
@@ -45,4 +46,14 @@
 .twitter,
 .youtube {
   background-color: transparent;
+}
+
+@media (min-width: $desktop-width) {
+  .list {
+    margin-left: -10px;
+  }
+
+  .item:not(:last-child) {
+    margin-right: 15px;
+  }
 }
