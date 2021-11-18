@@ -44,6 +44,13 @@ export default function Slider() {
       pagination={PaginationSettings}
       autoplay={AutoplaySettings}
       centeredSlides={true}
+      breakpoints={
+        {
+          1024: {
+            allowTouchMove: false,
+          }
+        }
+      }
     >
       {SlidesInfo.map((item) => (
         <SwiperSlide

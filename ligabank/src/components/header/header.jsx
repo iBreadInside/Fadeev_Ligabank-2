@@ -30,7 +30,13 @@ export default function Header() {
 
   // Nav handlers
   const handleNavToggle = () => {
-    isMobileNavHide ? setIsMobileNavHide(false) : setIsMobileNavHide(true);
+    if (isMobileNavHide) {
+      setIsMobileNavHide(false);
+      document.body.classList.add(`hide-overflow`);
+    } else {
+      setIsMobileNavHide(true);
+      document.body.classList.remove(`hide-overflow`);
+    }
   };
 
   return (
