@@ -39,7 +39,7 @@ export default function Nav({isFooter = false}) {
               exact
               to={route}
               className={`${styles.link} ${isFooter ? styles.link__footer : ''}`}
-              activeClassName={`${styles.active} ${isFooter ? 'visually-hidden' : ''}`}
+              activeClassName={`${styles.active} ${isFooter ? styles.link__hidden : ''}`}
             >
               {text}
             </NavLink>

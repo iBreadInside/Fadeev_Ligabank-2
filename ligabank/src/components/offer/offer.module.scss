@@ -3,9 +3,9 @@
 
 .offer {
   width: 100%;
-  padding: 36px 15px;
+  padding: 32px 15px 39px;
   background-color: $grey--background;
-  margin-bottom: 60px;
+  margin-bottom: -2px;
 }
 
 .list {
@@ -18,7 +18,7 @@
 }
 
 .title {
-  margin: 0 0 26px 0;
+  margin: 0 0 24px 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 25px;
@@ -56,7 +56,6 @@
 @media (min-width: $tablet-width) {
   .offer {
     padding: 56px 60px;
-    margin-bottom: 80px;
   }
 
   .list {

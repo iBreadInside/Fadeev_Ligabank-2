@@ -20,7 +20,7 @@
   }
 
   &:focus-within {
-    outline: 2px solid black;
+    outline: 2px solid orange;
   }
 
   &_footer:not(:last-child) {
@@ -45,6 +45,10 @@
 
   &:focus {
     outline: none;
+  }
+
+  &__hidden {
+    display: none;
   }
 }
 

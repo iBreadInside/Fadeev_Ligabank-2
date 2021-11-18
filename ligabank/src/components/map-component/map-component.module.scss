@@ -4,8 +4,8 @@
 .map {
   @include wrapper;
   width: 100%;
-  padding-top: 26px;
-  padding-bottom: 60px;
+  margin-top: 52px;
+  margin-bottom: 60px;
 }
 
 .title {
@@ -31,8 +31,8 @@
 
 @media (min-width: $tablet-width) {
   .map {
-    padding-top: 31px;
-    padding-bottom: 79px;
+    margin-top: 69px;
+    margin-bottom: 79px;
   }
 
   .title {
@@ -49,8 +49,8 @@
 
 @media (min-width: $desktop-width) {
   .map {
-    padding-top: 56px;
-    padding-bottom: 110px;
+    margin-top: 65px;
+    margin-bottom: 109px;
   }
 
   .title {

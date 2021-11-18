@@ -93,6 +93,10 @@
   background-color: $grey--line;
   cursor: pointer;
 
+  @-moz-document url-prefix() {
+    margin: 21px 0 5px 0;
+  }
+
   &__time {
     margin-top: 15px;
   }
@@ -120,6 +124,8 @@
   &::-moz-range-track {
     height: 1px;
     background-color: $grey--line;
+    margin: 21px 0 5px 0;
+
   }
 
   &::-moz-range-thumb {
@@ -169,7 +175,6 @@
   right: 0;
   color: red;
 }
-
 
 @media (min-width: $tablet-width) {
   .fieldset {
