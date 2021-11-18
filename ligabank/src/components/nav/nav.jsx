@@ -31,14 +31,14 @@ export default function Nav({isFooter = false}) {
   const navList = isFooter ? NavLinks : NavLinks.slice(0, -1);
 
   return (
-    <ul className={styles.list}>
+    <ul className={`${styles.list} ${isFooter ? styles.list__footer : ''}`}>
       {
         navList.map(({text, route}) => (
           <li key={text} className={`${styles.list__item} ${isFooter ? styles.list__item_footer : ''}`}>
             <NavLink
               exact
               to={route}
-              className={styles.link}
+              className={`${styles.link} ${isFooter ? styles.link__footer : ''}`}
               activeClassName={`${styles.active} ${isFooter ? 'visually-hidden' : ''}`}
             >
               {text}

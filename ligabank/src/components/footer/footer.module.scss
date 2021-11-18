@@ -4,14 +4,13 @@
 .footer {
   min-height: 224px;
   background-color: $grey--background;
-  padding: 49px;
+  padding: 26px 13px;
 }
 
-.container {
-  @include wrapper;
-  max-width: 1170px;
+.wrapper {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 }
 
 .list {
@@ -32,14 +31,15 @@
   font-size: 12px;
   line-height: 17px;
   font-style: normal;
-  margin: 3px 0 0;
+  margin: 0;
 }
 
 .adress {
-  margin-top: 10px;
+  display: none;
 }
 
 .tel {
+  @include link;
   font-weight: bold;
   font-size: 16px;
   line-height: 22px;
@@ -51,15 +51,16 @@
 
 .contacts {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding-top: 9px;
-  gap: 47px;
+  padding-top: 14px;
+  padding-left: 33px;
 }
 
 .call {
   position: relative;
   box-sizing: border-box;
-  max-width: 175px;
+  margin-bottom: 17px;
 
   &::before {
     content: '';
@@ -85,5 +86,65 @@
     left: -33px;
     width: 16px;
     background-image: url('../../img/svg/phone-icon.svg');
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .footer {
+    padding: 49px 46px;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto auto auto;
+  }
+
+  .adress {
+    display: block;
+    grid-row: 3/4;
+    max-width: 259px;
+    margin-top: 20px;
+  }
+
+  .contacts {
+    grid-column: 2/3;
+    grid-row: 1/4;
+    justify-content: flex-start;
+    padding-top: 11px;
+    padding-left: 45px;
+  }
+
+  .call {
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .footer {
+    padding: 46px 46px 0;
+  }
+
+  .wrapper {
+    @include wrapper;
+    grid-template-columns: repeat(5, auto);
+    grid-auto-rows: 40px auto;
+  }
+
+  .contacts {
+    justify-content: space-between;
+    flex-direction: row;
+    grid-column: 3/6;
+    grid-row: 1/3;
+    padding-left: 33px;
+  }
+
+  .adress {
+    grid-row: 2/3;
+    margin-top: 4px;
+  }
+
+  .mobile {
+    margin-right: 44px;
   }
 }
