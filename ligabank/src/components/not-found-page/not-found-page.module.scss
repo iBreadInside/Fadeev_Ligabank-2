@@ -1,10 +1,28 @@
+@import 'src/sass/mixins.scss';
 @import 'src/sass/variables.scss';
 
 .title {
-  font-size: 54px;
-  line-height: 63px;
+  @include wrapper;
+  display: block;
+  max-width: 100%;
+  font-size: 24px;
+  line-height: 33px;
   color: $black--default;
   height: 55vh;
   text-align: center;
   margin: 105px auto 0;
+}
+
+@media (min-width: $tablet-width) {
+  .title {
+    font-size: 34px;
+    line-height: 43px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .title {
+    font-size: 54px;
+    line-height: 63px;
+  }
 }
