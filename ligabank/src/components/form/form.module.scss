@@ -45,11 +45,11 @@
   font-size: $font-size--default;
   outline-color: $han-purple;
   cursor: pointer;
+}
 
-  &__error {
-    border: 1px solid red;
-    outline-color: red;
-  }
+.input__error {
+  border: 1px solid red;
+  outline-color: red;
 }
 
 .notice {
@@ -68,20 +68,20 @@
   background-color: transparent;
   background-repeat: no-repeat;
   cursor: pointer;
+}
 
-  &__plus {
-    top: 25%;
-    right: 0;
-    background-image: url('../../img/svg/plus.svg');
-    background-position: 70% center;
-  }
+.control__plus {
+  top: 25%;
+  right: 0;
+  background-image: url('../../img/svg/plus.svg');
+  background-position: 70% center;
+}
 
-  &__minus {
-    top: 25%;
-    left: 0;
-    background-image: url('../../img/svg/minus.svg');
-    background-position: 45% center;
-  }
+.control__minus {
+  top: 25%;
+  left: 0;
+  background-image: url('../../img/svg/minus.svg');
+  background-position: 45% center;
 }
 
 .range {
@@ -95,10 +95,6 @@
 
   @-moz-document url-prefix() {
     margin: 21px 0 5px 0;
-  }
-
-  &__time {
-    margin-top: 15px;
   }
 
   &::-webkit-slider-runnable-track {
@@ -119,6 +115,10 @@
     &:hover {
       transform: scale(1.2);
     }
+  }
+
+  .range__time {
+    margin-top: 15px;
   }
 
   &::-moz-range-track {

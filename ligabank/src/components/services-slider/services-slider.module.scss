@@ -26,10 +26,12 @@
 
   &:nth-child(1) .img {
     background-image: url('../../img/tabs/piggybank.jpg');
+    background-color: transparent;
   }
 
   &:nth-child(2) .img {
     background-image: url('../../img/tabs/car.jpg');
+    background-color: transparent;
     background-position: 42% 87%;
     background-size: 222%;
     top: 15%;
@@ -37,12 +39,14 @@
 
   &:nth-child(3) .img {
     background-image: url('../../img/tabs/lock.jpg');
+    background-color: transparent;
     background-position: 49% 87%;
     background-size: 170%;
   }
 
   &:nth-child(4) .img {
     background-image: url('../../img/tabs/mobile.jpg');
+    background-color: transparent;
     background-position: 50%;
     background-size: 200%;
     top: 13%;

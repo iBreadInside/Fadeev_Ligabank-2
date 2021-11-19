@@ -54,21 +54,21 @@
     top: 25px;
     width: 18px;
     height: 11px;
-
     background-image: url('../../img/svg/select.svg');
+    background-color: transparent;
     background-repeat: no-repeat;
     background-size: 18px 11px;
     background-position: 90% center;
   }
+}
 
-  &__open {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom: none;
+.button__open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
 
-    &:before {
-      transform: rotate(180deg);
-    }
+  &:before {
+    transform: rotate(180deg);
   }
 }
 

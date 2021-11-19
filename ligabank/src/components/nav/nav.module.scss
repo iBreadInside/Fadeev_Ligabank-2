@@ -5,11 +5,11 @@
   @include list-style-none;
   border-top: 1px solid $grey--line;
   border-bottom: 1px solid $grey--line;
+}
 
-  &__footer {
-    border: none;
-    margin-top: 11px;
-  }
+.list__footer {
+  border: none;
+  margin-top: 11px;
 }
 
 .list__item {
@@ -37,19 +37,19 @@
   padding-left: 15px;
   padding-bottom: 20px;
 
-  &__footer {
-    padding: 5px 2px;
-    font-size: 14px;
-    line-height: 20px;
-  }
-
   &:focus {
     outline: none;
   }
+}
 
-  &__hidden {
-    display: none;
-  }
+.link__hidden {
+  display: none;
+}
+
+.link__footer {
+  padding: 5px 2px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .active {
@@ -61,10 +61,6 @@
     display: flex;
     flex-wrap: wrap;
     border: none;
-
-    &__footer {
-      flex-direction: column;
-    }
   }
 
   .list__item {
@@ -76,17 +72,21 @@
     }
   }
 
+  .list__footer {
+    flex-direction: column;
+  }
+
   .link {
     font-size: 14px;
     line-height: 16px;
     min-height: fit-content;
     padding-left: 0;
+  }
 
-    &__footer {
-      font-weight: 500;
-      font-size: $font-size--default;
-      line-height: 22px;
-    }
+  .link__footer {
+    font-weight: 500;
+    font-size: $font-size--default;
+    line-height: 22px;
   }
 }
 
@@ -102,11 +102,11 @@
     font-size: 16px;
     line-height: 19px;
     padding-top: 16px;
+  }
 
-    &__footer {
-      line-height: 22px;
-      padding-top: 4px;
-    }
+  .link__footer {
+    line-height: 22px;
+    padding-top: 4px;
   }
 
   .list__item {
