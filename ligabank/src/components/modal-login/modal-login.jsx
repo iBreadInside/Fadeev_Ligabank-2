@@ -63,7 +63,8 @@ export default function ModalLogin({onClose, onFormSubmit}) {
               onChange={handleLoginChange}
               autoFocus
               name='login-input'
-              id={LocStorKey.LOGIN} />
+              id={LocStorKey.LOGIN}
+              required />
           </li>
           <li className={styles.item}>
             <label className={styles.label} htmlFor={LocStorKey.PASS}>Пароль</label>
@@ -74,7 +75,8 @@ export default function ModalLogin({onClose, onFormSubmit}) {
               value={password}
               onChange={handlePassChange}
               name='login-input'
-              id={LocStorKey.PASS} />
+              id={LocStorKey.PASS}
+              required />
             <button
               type={BtnType.button}
               className={styles.password_toggler}

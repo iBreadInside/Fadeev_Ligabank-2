@@ -4,7 +4,7 @@
 .map {
   @include wrapper;
   width: 100%;
-  margin-top: 52px;
+  margin-top: 26px;
   margin-bottom: 60px;
 }
 
@@ -18,20 +18,22 @@
 .location {
   width: 100%;
   height: 381px;
-  background-image: url('../../img/map.png');
+  background-image: url('../../img/map.jpg');
+  background-image: -webkit-image-set(url('../../img/map.webp'));
   background-size: cover;
   background-position: 100%;
   background-repeat: no-repeat;
   background-color: #EFF5E7;
 
   @media (min-resolution: 2dppx) {
-   background-image: url('../../img/map@2x.png');
+    background-image: url('../../img/map@2x.jpg');
+    background-image: -webkit-image-set(url('../../img/map@2x.webp'));
   }
 }
 
 @media (min-width: $tablet-width) {
   .map {
-    margin-top: 69px;
+    margin-top: 31px;
     margin-bottom: 79px;
   }
 
@@ -49,7 +51,7 @@
 
 @media (min-width: $desktop-width) {
   .map {
-    margin-top: 65px;
+    margin-top: 57px;
     margin-bottom: 109px;
   }
 

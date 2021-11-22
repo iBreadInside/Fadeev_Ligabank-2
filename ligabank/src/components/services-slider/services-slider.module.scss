@@ -24,13 +24,19 @@
   position: relative;
   padding: 56px 15px 0;
 
+  &:nth-child(n) .img {
+    z-index: -1;
+  }
+
   &:nth-child(1) .img {
     background-image: url('../../img/tabs/piggybank.jpg');
+    background-image: -webkit-image-set(url('../../img/tabs/piggybank.webp'));
     background-color: #F9FAFE;
   }
 
   &:nth-child(2) .img {
     background-image: url('../../img/tabs/car.jpg');
+    background-image: -webkit-image-set(url('../../img/tabs/car.webp'));
     background-color: #F0F4FF;
     background-position: 42% 87%;
     background-size: 222%;
@@ -39,6 +45,7 @@
 
   &:nth-child(3) .img {
     background-image: url('../../img/tabs/lock.jpg');
+    background-image: -webkit-image-set(url('../../img/tabs/lock.webp'));
     background-color: $grey--background;
     background-position: 49% 87%;
     background-size: 170%;
@@ -46,6 +53,7 @@
 
   &:nth-child(4) .img {
     background-image: url('../../img/tabs/mobile.jpg');
+    background-image: -webkit-image-set(url('../../img/tabs/mobile.webp'));
     background-color: $grey--background;
     background-position: 50%;
     background-size: 200%;
@@ -55,18 +63,22 @@
   @media (min-resolution: 2dppx) {
     &:nth-child(1) .img {
       background-image: url('../../img/tabs/piggybank@2x.jpg');
+      background-image: -webkit-image-set(url('../../img/tabs/piggybank@2x.webp'));
     }
 
     &:nth-child(2) .img {
       background-image: url('../../img/tabs/car@2x.jpg');
+      background-image: -webkit-image-set(url('../../img/tabs/car@2x.webp'));
     }
 
     &:nth-child(3) .img {
       background-image: url('../../img/tabs/lock@2x.jpg');
+      background-image: -webkit-image-set(url('../../img/tabs/lock@2x.webp'));
     }
 
     &:nth-child(4) .img {
       background-image: url('../../img/tabs/mobile@2x.jpg');
+      background-image: -webkit-image-set(url('../../img/tabs/mobile@2x.webp'));
     }
   }
 }

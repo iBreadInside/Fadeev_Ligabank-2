@@ -15,7 +15,13 @@ export default function Header() {
 
   // Modal handlers
   const handleModalToggle = () => {
-    isModalOpened ? setIsModalOpened(false) : setIsModalOpened(true);
+    if (isModalOpened) {
+      setIsModalOpened(false);
+      document.body.classList.remove(`hide-overflow`);
+    } else {
+      setIsModalOpened(true);
+      document.body.classList.add(`hide-overflow`);
+    }
   };
 
   const handleFormSubmit = (evt) => {

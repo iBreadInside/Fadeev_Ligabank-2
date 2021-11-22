@@ -66,6 +66,13 @@ export default function ServicesSlider() {
     swiperRef.current?.swiper.slideTo(id - 1);
   };
 
+  const handleTabKeyDown = (evt, id) => {
+    if (evt.key === 'Enter') {
+      setActiveSlideIndex(id);
+      swiperRef.current?.swiper.slideTo(id - 1);
+    }
+  };
+
   return(
     <section className={styles.services}>
       <nav className={styles.tabs}>
@@ -77,6 +84,7 @@ export default function ServicesSlider() {
               tabIndex={0}
               className={`${styles.service_tab} ${activeSlideIndex === service.id ? styles.service_tab__active : ''}`}
               onClick={() => handleTabClick(service.id)}
+              onKeyDown={(evt) => handleTabKeyDown(evt, service.id)}
             >
               <p className={styles.tab_name}>{service.tabName}</p>
             </li>

@@ -8,7 +8,10 @@ export default function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path={AppRoute.MAIN}>
+        <Route
+          exact
+          path={AppRoute.MAIN}
+        >
           <CreditCalculatorPage />
         </Route>
         <Route>
