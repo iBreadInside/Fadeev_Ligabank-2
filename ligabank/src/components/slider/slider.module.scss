@@ -26,34 +26,41 @@
 
   &:nth-child(1) {
     background-color: $han-purple;
-    background-image: url('../../img/slider/cards.png');
+    background-image: url('../../img/slider/cards.jpg');
+    background-image: -webkit-image-set(url('../../img/slider/cards.webp'));
     background-position: 43% 76%;
     background-size: $slider-background-size;
     background-repeat: no-repeat;
 
     @media (min-resolution: 2dppx) {
-      background-image: url('../../img/slider/cards@2x.png');
+      background-image: url('../../img/slider/cards@2x.jpg');
+      background-image: -webkit-image-set(url('../../img/slider/cards@2x.webp'));
     }
   }
 
   &:nth-child(2) {
     background-color: $second-slide-background;
     background-image: url('../../img/slider/man.jpg');
+    background-image: -webkit-image-set(url('../../img/slider/man.webp'));
+
     background-repeat: no-repeat;
 
     @media (min-resolution: 2dppx) {
       background-image: url('../../img/slider/man@2x.jpg');
+      background-image: -webkit-image-set(url('../../img/slider/man@2x.webp'));
     }
   }
 
   &:nth-child(3) {
     background-color: $third-slide-background;
     background-image: url('../../img/slider/girl.jpg');
+    background-image: -webkit-image-set(url('../../img/slider/girl.webp'));
     background-repeat: no-repeat;
     background-position: 63%;
 
     @media (min-resolution: 2dppx) {
       background-image: url('../../img/slider/girl@2x.jpg');
+      background-image: -webkit-image-set(url('../../img/slider/girl@2x.webp'));
     }
   }
 }
