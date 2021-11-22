@@ -24,6 +24,10 @@
   position: relative;
   padding: 56px 15px 0;
 
+  &:nth-child(n) .img {
+    z-index: -1;
+  }
+
   &:nth-child(1) .img {
     background-image: url('../../img/tabs/piggybank.jpg');
     background-color: #F9FAFE;
