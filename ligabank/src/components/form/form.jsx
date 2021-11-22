@@ -328,7 +328,7 @@ export default function Form({creditState, setCreditState}) {
             value={creditState.percent}
             onChange={handlePaymentChange}
           />
-          <p className={styles.limit}>{paymentParams[purpose].percent}%</p>
+          <p className={styles.limit}>{Math.round(creditState.percent)}%</p>
         </li>
         <li className={styles.item}>
           <label className={styles.label}>
